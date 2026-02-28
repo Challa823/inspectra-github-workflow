@@ -1,14 +1,14 @@
 """
 fetch_java_releases.py
 
-Fetches available Java/JDK release versions and normalises them into a flat list:
-  [ {"version": "17.0.12", "major": 17, "lts": true, "source": "adoptium"}, ... ]
-
-Sources tried in priority order:
-  1. Eclipse Temurin / Adoptium API  (reliable, always returns JSON)
-  2. Oracle Java Releases Cloud API  (fallback, sometimes unreliable/firewalled)
+Fetches available Java/JDK release versions from the Oracle Java Cloud API and
+normalises them into a flat list:
+  [ {"version": "17.0.12", "major": 17, "lts": true, "source": "oracle"}, ... ]
 
 Output is written to --output (default: java_releases.json).
+
+NOTE: Adoptium (Eclipse Temurin) source is implemented below but currently
+      unused — it will be wired in as a fallback in a future iteration.
 """
 
 import argparse
@@ -17,9 +17,11 @@ import os
 import sys
 import requests
 
-ADOPTIUM_INFO_URL   = "https://api.adoptium.net/v3/info/available_releases"
-ADOPTIUM_LATEST_URL = "https://api.adoptium.net/v3/assets/latest/{major}/hotspot"
-ORACLE_URL          = "https://java.oraclecloud.com/javaReleases"
+ORACLE_URL = "https://java.oraclecloud.com/javaReleases"
+
+# Adoptium endpoints — unused for now, kept for future use
+_ADOPTIUM_INFO_URL   = "https://api.adoptium.net/v3/info/available_releases"
+_ADOPTIUM_LATEST_URL = "https://api.adoptium.net/v3/assets/latest/{major}/hotspot"
 
 TIMEOUT = 15  # seconds per request
 
@@ -51,17 +53,19 @@ def _get(url: str, label: str, params: dict | None = None) -> requests.Response 
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Source 1 – Eclipse Temurin / Adoptium
+# UNUSED – Eclipse Temurin / Adoptium  (wired in later as a fallback)
 # ──────────────────────────────────────────────────────────────────────────────
 
 def _fetch_adoptium() -> list[dict]:
     """
+    Unused for now – will be wired in as a fallback in a future iteration.
+
     1. GET /v3/info/available_releases  → list of LTS + non-LTS major versions
     2. For each major: GET /v3/assets/latest/{major}/hotspot  → semver string
     Returns normalised list [{version, major, lts, source}]
     """
     print("[INFO] Trying Adoptium (Eclipse Temurin) API …")
-    resp = _get(ADOPTIUM_INFO_URL, "Adoptium info")
+    resp = _get(_ADOPTIUM_INFO_URL, "Adoptium info")
     if resp is None:
         return []
 
@@ -84,7 +88,7 @@ def _fetch_adoptium() -> list[dict]:
             "os":           "linux",
             "vendor":       "eclipse",
         }
-        r2 = _get(ADOPTIUM_LATEST_URL.format(major=major),
+        r2 = _get(_ADOPTIUM_LATEST_URL.format(major=major),
                   f"Adoptium latest/{major}", params=params)
         if r2 is None:
             print(f"[WARN]  Adoptium latest/{major}: skipping")
@@ -106,12 +110,9 @@ def _fetch_adoptium() -> list[dict]:
             print(f"[WARN]  Adoptium latest/{major}: empty asset list")
             continue
 
-        # assets[0].version.semver  e.g. "17.0.12+7"
         semver = (assets[0].get("version") or {}).get("semver", "")
         if not semver:
             semver = assets[0].get("release_name", str(major))
-
-        # strip build metadata (+7)
         clean = semver.split("+")[0].split("-")[0].strip()
         print(f"[INFO]  Adoptium JDK {major}: version={clean}")
         releases.append({
@@ -125,16 +126,16 @@ def _fetch_adoptium() -> list[dict]:
 
 
 # ──────────────────────────────────────────────────────────────────────────────
-# Source 2 – Oracle Java Releases Cloud API (fallback)
+# ACTIVE – Oracle Java Releases Cloud API
 # ──────────────────────────────────────────────────────────────────────────────
 
 def _fetch_oracle() -> list[dict]:
     """
     GET https://java.oraclecloud.com/javaReleases
-    Oracle returns a JSON object with a "items" list or a flat list.
-    We normalise to [{version, major, lts, source}].
+    Oracle may return {"items": [...]} or a bare list.
+    Normalises to [{version, major, lts, source}].
     """
-    print("[INFO] Trying Oracle Java Releases API …")
+    print(f"[INFO] Calling Oracle Java Releases API: {ORACLE_URL}")
     resp = _get(ORACLE_URL, "Oracle javaReleases")
     if resp is None:
         return []
@@ -145,23 +146,24 @@ def _fetch_oracle() -> list[dict]:
         print(f"[WARN]  Oracle: JSON parse error – {exc}")
         return []
 
-    # Oracle may return:  {"items": [...], ...}  or  [...]
+    # Handle both {"items": [...]} wrapper and bare list
     items = raw if isinstance(raw, list) else raw.get("items", [])
-    print(f"[INFO]  Oracle: {len(items)} raw release records")
+    print(f"[INFO]  Oracle: {len(items)} raw release records received")
+    print(f"[DEBUG] Oracle raw (first record): {json.dumps(items[0], indent=2) if items else 'empty'}")
 
     releases: list[dict] = []
     for item in items:
-        # field names vary by Oracle API version
         ver = (item.get("jdkVersion")
                or item.get("version")
                or item.get("releaseVersion")
                or "")
         if not ver:
+            print(f"[DEBUG] Skipping record with no version field: {item}")
             continue
         ver = str(ver).strip()
         try:
             major = int(ver.split(".")[0])
-            if major == 1:          # old-style 1.8.x
+            if major == 1:          # old-style 1.8.x → major=8
                 major = int(ver.split(".")[1])
         except (ValueError, IndexError):
             major = 0
@@ -182,19 +184,14 @@ def _fetch_oracle() -> list[dict]:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def fetch_java_releases() -> list[dict]:
-    """Try Adoptium first, Oracle second. Always returns a list (may be empty)."""
-    releases = _fetch_adoptium()
-    if releases:
-        print(f"[INFO] Adoptium returned {len(releases)} release records.")
-        return releases
-
-    print("[WARN] Adoptium returned nothing – falling back to Oracle.")
+    """Fetch Java releases from Oracle Cloud API. Returns a list (may be empty)."""
     releases = _fetch_oracle()
     if releases:
         print(f"[INFO] Oracle returned {len(releases)} release records.")
         return releases
 
-    print("[ERROR] All sources failed. Returning empty release list.")
+    # NOTE: Adoptium fallback (_fetch_adoptium) available – enable here later.
+    print("[ERROR] Oracle API returned nothing. Returning empty release list.")
     return []
 
 
