@@ -2,9 +2,15 @@
   "tls version": [
     "TLSv1.3"
   ],
-  "Cipher version": [],
+  "Cipher version": [
+    "(NONE)",
+    "TLS_AES_256_GCM_SHA384"
+  ],
   "CurrentJdkVersion": "17.0.18",
   "futureJDKMinorUpgradeVersion": "Unknown",
   "FutureMajorUpgradedVersion": "21.0.9",
-  "uniqusslerrors": []
+  "uniqusslerrors": [
+    "40073FE6CB7F0000:error:0A000126:SSL routines:ssl3_read_n:unexpected eof while reading:../ssl/record/rec_layer_s3.c:316:",
+    "timeout"
+  ]
 }

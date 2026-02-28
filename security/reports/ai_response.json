@@ -32,14 +32,14 @@
       "logprobs": null,
       "message": {
         "annotations": [],
-        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
+        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [\n      \"(NONE)\",\n      \"TLS_AES_256_GCM_SHA384\"\n    ],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": [\n      \"40073FE6CB7F0000:error:0A000126:SSL routines:ssl3_read_n:unexpected eof while reading:../ssl/record/rec_layer_s3.c:316:\",\n      \"timeout\"\n    ]\n  },\n  \"compatibility\": [\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"(NONE)\",\n      \"now\": \"Not Supported\",\n      \"futureMinor\": \"Not Supported\",\n      \"futureMajor\": \"Not Supported\",\n      \"severity\": \"CRITICAL\",\n      \"reason\": \"TLS 1.3 requires a valid cipher, (NONE) is not supported.\",\n      \"action\": \"Use a valid cipher for TLS 1.3.\"\n    },\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"TLS_AES_256_GCM_SHA384\",\n      \"now\": \"Supported\",\n      \"futureMinor\": \"Not Supported\",\n      \"futureMajor\": \"Supported\",\n      \"severity\": \"HIGH\",\n      \"reason\": \"Supported now and in future major, but not in future minor.\",\n      \"action\": \"Upgrade to a supported JDK version for future minor.\"\n    }\n  ],\n  \"highSummaryFromErrors\": \"The unique SSL errors indicate unexpected EOF and a timeout, suggesting potential connectivity issues or misconfigurations.\",\n  \"endpoints_scan_augmented\": []\n}",
         "refusal": null,
         "role": "assistant"
       }
     }
   ],
-  "created": 1772264651,
-  "id": "chatcmpl-DE9HfkcQXfwGzhMUaUVxvlqmf5nur",
+  "created": 1772279727,
+  "id": "chatcmpl-DEDCp5gs6sRrpIBonhz3cOFhUtiLD",
   "model": "gpt-4o-mini-2024-07-18",
   "object": "chat.completion",
   "prompt_filter_results": [
@@ -71,18 +71,18 @@
   ],
   "system_fingerprint": "fp_f97eff32c5",
   "usage": {
-    "completion_tokens": 105,
+    "completion_tokens": 386,
     "completion_tokens_details": {
       "accepted_prediction_tokens": 0,
       "audio_tokens": 0,
       "reasoning_tokens": 0,
       "rejected_prediction_tokens": 0
     },
-    "prompt_tokens": 676,
+    "prompt_tokens": 743,
     "prompt_tokens_details": {
       "audio_tokens": 0,
       "cached_tokens": 0
     },
-    "total_tokens": 781
+    "total_tokens": 1129
   }
 }
