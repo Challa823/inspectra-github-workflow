@@ -3,7 +3,7 @@ import json
 import argparse
 import requests
 
-GITHUB_MODELS_URL = "https://models.github.ai/inference/chat/completions"
+GITHUB_MODELS_URL = "https://models.inference.ai.azure.com/chat/completions"
 
 
 def call_github_models(system_prompt: str, user_prompt: str, model: str = "gpt-4o-mini") -> dict:

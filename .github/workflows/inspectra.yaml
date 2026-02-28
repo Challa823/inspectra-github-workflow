@@ -68,7 +68,10 @@ jobs:
       - name: Call GitHub Models Chat API
         id: call_github_models
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GH_TOKEN must be a GitHub PAT (classic or fine-grained) stored as a
+          # repository secret named GH_TOKEN.  The automatic GITHUB_TOKEN does
+          # NOT have GitHub Models access and will return 403.
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python scripts/call_github_models.py \
             --system-file prompt_system.txt \
