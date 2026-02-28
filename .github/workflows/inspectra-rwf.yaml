@@ -1,3 +1,4 @@
+
 name: Inspectra (Reusable) — Workflow Repo Scripts
 
 on:
@@ -142,3 +143,155 @@ jobs:
           git commit -m "TLS audit reports [skip ci]" || echo "No changes to commit"
 
           git push
+=======
+name: Inspectra (Reusable) — Workflow Repo Scripts
+
+on:
+  workflow_call:
+    inputs:
+      files_glob:
+        required: false
+        type: string
+        default: "**/*.{properties,yml,yaml}"
+      branch:
+        required: false
+        type: string
+        default: "main"
+
+permissions:
+  contents: write
+  security-events: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      # 1) Checkout the caller repo (so we can read files and commit reports)
+      - name: Checkout caller repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || github.ref_name }}
+
+      # 2) Checkout this reusable workflow's repo to fetch scripts
+      - name: Checkout reusable workflow repository
+        uses: actions/checkout@v4
+        with:
+          repository: Challa823/inspectra-github-workflow
+          path: workflow_repo
+          ref: main
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Create reports directory
+        run: mkdir -p security/reports
+
+      - name: Detect JDK
+        id: detect_jdk
+        run: |
+          python workflow_repo/scripts/detect_jdk.py --output security/reports/jdk_info.json
+          cp security/reports/jdk_info.json jdk_info.json
+
+      - name: Collect endpoints from config files
+        id: collect_endpoints
+        env:
+          FILES_GLOB: ${{ inputs.files_glob || '**/*.{properties,yml,yaml}' }}
+        run: |
+          python workflow_repo/scripts/collect_endpoints.py \
+            --files-glob "${FILES_GLOB}" \
+            --base-dir . \
+            --output security/reports/endpoints.txt
+          cp security/reports/endpoints.txt endpoints.txt
+          cp security/reports/endpoints.json endpoints.json || true
+
+      - name: SSL scan endpoints
+        id: ssl_scan
+        run: |
+          python workflow_repo/scripts/ssl_scan.py \
+            --endpoints-json endpoints.json \
+            --output security/reports/endpoints_scan.json
+          cp security/reports/endpoints_scan.json endpoints_scan.json
+
+      - name: Fetch Java Releases
+        id: fetch_java_releases
+        continue-on-error: true
+        run: |
+          python workflow_repo/scripts/fetch_java_releases.py \
+            --output security/reports/java_releases.json
+          cp security/reports/java_releases.json java_releases.json || true
+
+      - name: Extract TLS context
+        id: extract_tls_context
+        run: |
+          python workflow_repo/scripts/extract_tls_context.py \
+            --jdk-info       jdk_info.json \
+            --java-releases  java_releases.json \
+            --endpoints-scan endpoints_scan.json \
+            --output         security/reports/tls_context.json
+          cp security/reports/tls_context.json tls_context.json
+
+      - name: Build prompt
+        id: build_prompt
+        run: |
+          python workflow_repo/scripts/build_prompt.py \
+            --tls-context tls_context.json \
+            --system-out  security/reports/prompt_system.txt \
+            --user-out    security/reports/prompt_user.txt
+          cp security/reports/prompt_system.txt prompt_system.txt
+          cp security/reports/prompt_user.txt   prompt_user.txt
+
+      - name: Call GitHub Models Chat API
+        id: call_github_models
+        env:
+          # Prefer GH_TOKEN PAT; otherwise fall back to workflow GITHUB_TOKEN
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN || secrets.GITHUB_TOKEN }}
+        run: |
+          python workflow_repo/scripts/call_github_models.py \
+            --system-file prompt_system.txt \
+            --prompt-file prompt_user.txt \
+            --output      security/reports/ai_response.json
+          cp security/reports/ai_response.json ai_response.json
+
+      - name: Extract model content
+        id: extract_analysis
+        run: |
+          python workflow_repo/scripts/extract_analysis.py \
+            --model-response ai_response.json \
+            --output         security/reports/analysis.json \
+            --summary-out    security/reports/summary.txt
+
+      - name: Build Markdown audit table
+        run: |
+          python workflow_repo/scripts/build_markdown_report.py \
+            --ai-response security/reports/ai_response.json \
+            --analysis security/reports/analysis.json \
+            --tls-context security/reports/tls_context.json \
+            --endpoints security/reports/endpoints.json \
+            --jdk-info security/reports/jdk_info.json \
+            --output-md security/reports/tls-audit.md
+
+      - name: Generate SARIF and Sonar files
+        run: |
+          python workflow_repo/scripts/generate_reports.py \
+            --analysis       security/reports/analysis.json \
+            --endpoints-json endpoints.json \
+            --out-dir        security/reports
+
+      - name: Upload SARIF to GitHub code scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: security/reports/tls-audit.sarif
+
+      - name: Commit reports to repo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add security/reports/
+          git commit -m "TLS audit reports [skip ci]" || echo "No changes to commit"
+          git push
+
