@@ -1,3 +1,74 @@
-{
-  "note": "fetch failed; using empty payload"
-}
+[
+  {
+    "version": "8.0.482",
+    "major": 8,
+    "lts": true,
+    "source": "adoptium"
+  },
+  {
+    "version": "11.0.30",
+    "major": 11,
+    "lts": true,
+    "source": "adoptium"
+  },
+  {
+    "version": "16.0.2",
+    "major": 16,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "17.0.18",
+    "major": 17,
+    "lts": true,
+    "source": "adoptium"
+  },
+  {
+    "version": "18.0.2",
+    "major": 18,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "19.0.2",
+    "major": 19,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "20.0.2",
+    "major": 20,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "21.0.10",
+    "major": 21,
+    "lts": true,
+    "source": "adoptium"
+  },
+  {
+    "version": "22.0.2",
+    "major": 22,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "23.0.2",
+    "major": 23,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "24.0.2",
+    "major": 24,
+    "lts": false,
+    "source": "adoptium"
+  },
+  {
+    "version": "25.0.2",
+    "major": 25,
+    "lts": true,
+    "source": "adoptium"
+  }
+]
