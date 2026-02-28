@@ -67,14 +67,25 @@ jobs:
 
       - name: Call GitHub Models Chat API
         id: call_github_models
-        run: python scripts/call_github_models.py --prompt-file prompt_user.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/call_github_models.py \
+            --system-file prompt_system.txt \
+            --prompt-file prompt_user.txt \
+            --output ai_response.json
 
       - name: Extract model content
         id: extract_analysis
-        run: python scripts/extract_analysis.py --model-response ai_response.json
+        run: |
+          mkdir -p security/reports
+          python scripts/extract_analysis.py \
+            --model-response ai_response.json \
+            --output security/reports/analysis.json \
+            --summary-out security/reports/summary.txt
 
       - name: Generate SARIF and Sonar files
-        run: python scripts/generate_reports.py --analysis analysis.json --endpoints-json endpoints.json --out-dir security/reports
+        run: python scripts/generate_reports.py --analysis security/reports/analysis.json --endpoints-json endpoints.json --out-dir security/reports
 
       - name: Upload SARIF to GitHub code scanning
         uses: github/codeql-action/upload-sarif@v3
