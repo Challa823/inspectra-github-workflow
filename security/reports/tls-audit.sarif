@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "tls-endpoint-audit",
+          "rules": [
+            {
+              "id": "TLS001",
+              "name": "TLSEndpointCompatibility",
+              "shortDescription": {
+                "text": "TLS endpoint SSL/TLS compatibility check"
+              }
+            }
+          ]
+        }
+      },
+      "results": []
+    }
+  ]
+}

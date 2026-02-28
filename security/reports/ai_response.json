@@ -1,0 +1,88 @@
+{
+  "choices": [
+    {
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "protected_material_code": {
+          "detected": false,
+          "filtered": false
+        },
+        "protected_material_text": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      },
+      "finish_reason": "stop",
+      "index": 0,
+      "logprobs": null,
+      "message": {
+        "annotations": [],
+        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [\n      \"TLS_AES_256_GCM_SHA384\"\n    ],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": [\n      \"timeout\"\n    ]\n  },\n  \"compatibility\": [\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"TLS_AES_256_GCM_SHA384\",\n      \"now\": \"Supported\",\n      \"futureMinor\": \"Unknown\",\n      \"futureMajor\": \"Supported\",\n      \"severity\": \"Unknown\",\n      \"reason\": \"Insufficient data for future minor support.\",\n      \"action\": \"Monitor for future JDK updates.\"\n    }\n  ],\n  \"highSummaryFromErrors\": \"The unique SSL error 'timeout' indicates potential connectivity issues that could affect security and performance.\",\n  \"endpoints_scan_augmented\": []\n}",
+        "refusal": null,
+        "role": "assistant"
+      }
+    }
+  ],
+  "created": 1772280027,
+  "id": "chatcmpl-DEDHfiYBLM8eKykYDfTB8T4TMiHFn",
+  "model": "gpt-4o-mini-2024-07-18",
+  "object": "chat.completion",
+  "prompt_filter_results": [
+    {
+      "prompt_index": 0,
+      "content_filter_results": {
+        "hate": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "jailbreak": {
+          "detected": false,
+          "filtered": false
+        },
+        "self_harm": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "sexual": {
+          "filtered": false,
+          "severity": "safe"
+        },
+        "violence": {
+          "filtered": false,
+          "severity": "safe"
+        }
+      }
+    }
+  ],
+  "system_fingerprint": "fp_f97eff32c5",
+  "usage": {
+    "completion_tokens": 230,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens": 695,
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    },
+    "total_tokens": 925
+  }
+}
