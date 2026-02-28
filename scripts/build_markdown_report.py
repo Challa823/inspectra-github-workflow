@@ -95,163 +95,94 @@ def determine_severity(now, fut_minor_status, fut_major_status, fallback="OK"):
         return "HIGH"
     return fallback
 
+def truncate(s, n=180):
+    s = s or ""
+    return (s[:n] + "…") if len(s) > n else s
+
+
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ai-response", default="ai_response.json")
-    ap.add_argument("--analysis", default="security/reports/analysis.json")
-    ap.add_argument("--tls-context", default="security/reports/tls_context.json")
-    ap.add_argument("--endpoints", default="security/reports/endpoints.json")
-    ap.add_argument("--jdk-info", default="security/reports/jdk_info.json")
-    ap.add_argument("--output-md", default="security/reports/tls-audit.md")
-    ap.add_argument("--environment", default="")
+    ap.add_argument("--ai-response",  default="ai_response.json",              help="(unused, kept for backward compat)")
+    ap.add_argument("--analysis",     default="security/reports/analysis.json", help="Primary input: analysis.json from extract_analysis.py")
+    ap.add_argument("--tls-context",  default="security/reports/tls_context.json", help="(unused, kept for backward compat)")
+    ap.add_argument("--endpoints",    default="security/reports/endpoints.json",    help="(unused, kept for backward compat)")
+    ap.add_argument("--jdk-info",     default="security/reports/jdk_info.json",     help="(unused, kept for backward compat)")
+    ap.add_argument("--output-md",    default="security/reports/tls-audit.md")
     args = ap.parse_args()
 
-    ai = load_json(args.ai_response)
-    analysis_direct = load_json(args.analysis)
-    tls_context = load_json(args.tls_context) or {}
-    endpoints_map = load_json(args.endpoints) or []
-    jdk_info = load_json(args.jdk_info) or {}
-
-    # Build endpoint->file mapping (if collector populated it)
-    ep_to_file = {}
-    if isinstance(endpoints_map, list):
-        for it in endpoints_map:
-            ep = it.get("endpoint") or it.get("host_port") or it.get("hostPort")
-            fp = it.get("file") or it.get("path")
-            if ep and fp:
-                ep_to_file.setdefault(ep, fp)
-
-    server_url = os.getenv("GITHUB_SERVER_URL", "https://github.com")
-    repo = os.getenv("GITHUB_REPOSITORY", "")
-    ref_name = os.getenv("GITHUB_REF_NAME", "") or os.getenv("GITHUB_REF", "")
-    environment_label = args.environment or (f"{repo}@{ref_name}" if repo else "workflow")
-
-    endpoints_aug, analysis_ai, compatibility_ai, extraction_ai = (None, None, None, None)
-    if ai:
-        endpoints_aug, analysis_ai, compatibility_ai, extraction_ai = try_extract_from_ai(ai)
-
-    endpoint_items = None
-    for candidate in (analysis_direct, endpoints_aug, analysis_ai):
-        if isinstance(candidate, list) and candidate:
-            endpoint_items = candidate
-            break
-    if not endpoint_items:
-        print("No endpoint-level analysis found in analysis.json nor ai_response.json.", file=sys.stderr)
+    # ── Load analysis.json — single source of truth ───────────────────────────
+    endpoint_items = load_json(args.analysis)
+    if not isinstance(endpoint_items, list) or not endpoint_items:
+        print("ERROR: analysis.json is missing or empty.", file=sys.stderr)
         endpoint_items = []
 
-    # future versions from context/extraction
-    extraction = (tls_context.get("extraction") if isinstance(tls_context, dict) else None) or extraction_ai or tls_context
-    future_minor_ver = None
-    future_major_ver = None
-    if isinstance(extraction, dict):
-        future_minor_ver = extraction.get("futureJDKMinorUpgradeVersion") or extraction.get("futureMinor") or extraction.get("futureJdkMinorVersion")
-        future_major_ver = extraction.get("FutureMajorUpgradedVersion") or extraction.get("futureMajor") or extraction.get("futureJdkMajorVersion")
-    current_jdk = jdk_info.get("version") or (extraction.get("CurrentJdkVersion") if isinstance(extraction, dict) else None)
-
-    # Helper to match composite against compatibility list to pull reason/action/status
-    def match_compat(tls_v, cipher_v):
-        comp_list = compatibility_ai or tls_context.get("compatibility")
-        if not isinstance(comp_list, list):
-            return {}
-        for c in comp_list:
-            cv_tls = c.get("tlsVersion") or c.get("tls version") or ""
-            cv_cip = c.get("CipherVersion") or c.get("Cipher version") or ""
-            if cv_tls == tls_v and cv_cip == cipher_v:
-                return {
-                    "futureMinor": c.get("futureMinor") or "",
-                    "futureMajor": c.get("futureMajor") or "",
-                    "reason": c.get("reason") or "",
-                    "action": c.get("action") or "",
-                    "now":    c.get("now") or ""
-                }
-        return {}
+    server_url = os.getenv("GITHUB_SERVER_URL", "https://github.com")
+    repo       = os.getenv("GITHUB_REPOSITORY", "")
+    ref_name   = os.getenv("GITHUB_REF_NAME", "") or os.getenv("GITHUB_REF", "")
 
     rows = []
     for item in endpoint_items:
-        endpoint = item.get("endpoint") or item.get("host_port") or item.get("hostPort") or ""
-        tls_v = item.get("tlsVersion") or item.get("tlsProtocol") or item.get("tls version") or ""
-        cipher = item.get("CipherVersion") or item.get("cipherSuite") or item.get("Cipher version") or ""
+        endpoint = item.get("endpoint") or ""
+        tls_v    = item.get("tlsVersion")    or ""
+        cipher   = item.get("CipherVersion") or ""
 
-        cur_jdk_ver = coalesce(item.get("CurrentJDKVersion"),
-                               (item.get("jdk") or {}).get("version"),
-                               current_jdk,
-                               default="Unknown")
+        # JDK versions — flat fields written by extract_analysis.py
+        cur_jdk_ver    = item.get("CurrentJDKVersion",            "Unknown") or "Unknown"
+        fut_minor_ver  = item.get("futureJDKMinorUpgradeVersion", "Unknown") or "Unknown"
+        fut_major_ver  = item.get("FutureMajorUpgradedVersion",   "Unknown") or "Unknown"
 
-        comp = item.get("compatibility") or {}
-        now_status = None
-        if isinstance(comp, dict) and "supported" in comp:
-            now_status = "Supported" if comp.get("supported") is True else ("Not Supported" if comp.get("supported") is False else "Unknown")
-        now_status = coalesce(item.get("CurrentJdkTlsStatus"), now_status, default="Unknown")
+        # TLS compatibility status — flat fields written by extract_analysis.py
+        now_status       = item.get("CurrentJdkTlsStatus",    "Unknown") or "Unknown"
+        fut_minor_status = item.get("FutureJdkMinorTlsStatus","Unknown") or "Unknown"
+        fut_major_status = item.get("FutureJdkMajorTlsStatus","Unknown") or "Unknown"
 
-        fut_minor_ver = coalesce(item.get("futureJdkMinorVersion"), future_minor_ver, default="Unknown")
-        fut_major_ver = coalesce(item.get("FutureJdkMajorVersion") or item.get("FutureMajorUpgradedVersion"),
-                                 future_major_ver, default="Unknown")
-
-        fut_minor_status = item.get("FutureJdkTlsStatus") or item.get("futureMinor") or ""
-        fut_major_status = item.get("futureJdkTlsStatus") or item.get("futureMajor") or ""
-
-        # Pull reason/action from the best available place:
-        # Priority:
-        # 1) Endpoint-level "Review comments"/"Action" (if augmented)
-        # 2) Endpoint-level compatibility.reason/action
-        # 3) Matching composite in compatibility list
-        reason = coalesce(item.get("Review comments"), comp.get("reason"), default="")
-        action = coalesce(item.get("Action"), comp.get("action"), default="")
-
-        if not fut_minor_status or not fut_major_status or not reason or not action:
-            m = match_compat(tls_v, cipher)
-            fut_minor_status = fut_minor_status or m.get("futureMinor", "")
-            fut_major_status = fut_major_status or m.get("futureMajor", "")
-            reason = reason or m.get("reason", "")
-            action = action or m.get("action", "")
-            now_status = now_status or m.get("now", "")
-
-        severity = item.get("severity")
+        severity = item.get("severity") or ""
         if not severity:
             severity = determine_severity(now_status, fut_minor_status, fut_major_status)
 
-        # filename link
-        file_path = ep_to_file.get(endpoint, "")
+        reason = item.get("reason") or ""
+        action = item.get("action") or ""
+
+        # environment comes directly from the 'env' field
+        environment = item.get("env") or ""
+
+        # source_file is the filename; build a GitHub blob link from it
+        file_path = item.get("source_file") or ""
         link = build_file_link(server_url, repo, ref_name or os.getenv("GITHUB_SHA", ""), file_path) if file_path else ""
 
-        # (optional) truncate very long reason/action for table readability (keep full in JSON artifacts)
-        def truncate(s, n=180):
-            s = s or ""
-            return (s[:n] + "…") if len(s) > n else s
-
         rows.append({
-            "Severity": severity,
-            "environment": environment_label,
-            "filename": file_path,
-            "filelink": link,
-            "Host_port": endpoint,
-            "tlsVersion": tls_v,
-            "CipherVersion": cipher,
-            "CurrentJDKVersion": cur_jdk_ver,
-            "CurrentJdkTlsStatus": now_status or "Unknown",
+            "Severity":              severity,
+            "environment":           environment,
+            "filename":              file_path,
+            "filelink":              link,
+            "Host_port":             endpoint,
+            "tlsVersion":            tls_v,
+            "CipherVersion":         cipher,
+            "CurrentJDKVersion":     cur_jdk_ver,
+            "CurrentJdkTlsStatus":   now_status,
             "futureJdkMinorVersion": fut_minor_ver,
-            "FutureJdkTlsStatus": fut_minor_status or "Unknown",
+            "FutureJdkMinorTlsStatus": fut_minor_status,
             "FutureJdkMajorVersion": fut_major_ver,
-            "futureJdkTlsStatus": fut_major_status or "Unknown",
-            "Reason": truncate(reason),
-            "Action": truncate(action),
+            "FutureJdkMajorTlsStatus": fut_major_status,
+            "Reason":                truncate(reason),
+            "Action":                truncate(action),
         })
 
-    rows.sort(key=lambda r: (severity_rank(r["Severity"]), r["Host_port"] or ""))
+    rows.sort(key=lambda r: (severity_rank(r["Severity"]), r["environment"] or "", r["Host_port"] or ""))
 
     headers = [
-        "Severity","environment","filename (link)","Host_port","tlsVersion","CipherVersion",
-        "CurrentJDKVersion","CurrentJdkTlsStatus",
-        "futureJdkMinorVersion","FutureJdkTlsStatus",
-        "FutureJdkMajorVersion","futureJdkTlsStatus",
-        "Reason","Action"
+        "Severity", "environment", "filename (link)", "Host_port",
+        "tlsVersion", "CipherVersion",
+        "CurrentJDKVersion", "CurrentJdkTlsStatus",
+        "futureJdkMinorVersion", "FutureJdkMinorTlsStatus",
+        "FutureJdkMajorVersion", "FutureJdkMajorTlsStatus",
+        "Reason", "Action",
     ]
 
     lines = ["| " + " | ".join(headers) + " |",
-             "| " + " | ".join(["---"]*len(headers)) + " |"]
+             "| " + " | ".join(["---"] * len(headers)) + " |"]
 
     for r in rows:
-        # filename as markdown link if available
         if r["filelink"] and r["filename"]:
             fname_disp = f"[{md_escape(r['filename'])}]({r['filelink']})"
         else:
@@ -267,9 +198,9 @@ def main():
             md_escape(r["CurrentJDKVersion"]),
             md_escape(r["CurrentJdkTlsStatus"]),
             md_escape(r["futureJdkMinorVersion"]),
-            md_escape(r["FutureJdkTlsStatus"]),
+            md_escape(r["FutureJdkMinorTlsStatus"]),
             md_escape(r["FutureJdkMajorVersion"]),
-            md_escape(r["futureJdkTlsStatus"]),
+            md_escape(r["FutureJdkMajorTlsStatus"]),
             md_escape(r["Reason"]),
             md_escape(r["Action"]),
         ]
