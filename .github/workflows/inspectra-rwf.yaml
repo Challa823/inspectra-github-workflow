@@ -115,9 +115,10 @@ jobs:
         id: extract_analysis
         run: |
           python workflow_repo/scripts/extract_analysis.py \
-            --model-response ai_response.json \
-            --output         security/reports/analysis.json \
-            --summary-out    security/reports/summary.txt
+            --model-response  ai_response.json \
+            --endpoints-scan  endpoints_scan.json \
+            --output          security/reports/analysis.json \
+            --summary-out     security/reports/summary.txt
 
       - name: Build Markdown audit table
         run: |
