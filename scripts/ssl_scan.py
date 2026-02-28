@@ -62,20 +62,67 @@ def ssl_scan(endpoints_meta):
 
 
 def extract_tls_protocol(raw):
-    if 'Protocol  :' in raw:
-        return raw.split('Protocol  :')[1].split('\n')[0].strip()
-    if 'Protocol :' in raw:
-        return raw.split('Protocol :')[1].split('\n')[0].strip()
+    """
+    Extract negotiated TLS protocol from openssl s_client output.
+
+    Priority order (most reliable first):
+      1. Handshake summary line:  'New, TLSv1.3, Cipher is ...'
+      2. Summary block:           'Protocol: TLSv1.3'  (no space before colon)
+      3. SSL-Session block:       'Protocol  : TLSv1.3' (double-space)
+      4. Any TLSv\d.\d occurrence as last resort
+    """
     import re
-    m = re.search(r'TLSv\d\.\d', raw)
-    return m.group(0) if m else '<none>'
+
+    # 1. Handshake line: "New, TLSv1.3, Cipher is ..."
+    m = re.search(r'New,\s+(TLS(?:v[\d.]+|[\d.]+))\s*,\s*Cipher', raw)
+    if m:
+        proto = m.group(1).strip()
+        print(f"[DEBUG] TLS protocol extracted (handshake line): {proto}")
+        return proto
+
+    # 2. "Protocol: TLSv1.3"  or  "Protocol : TLSv1.3"  or  "Protocol  : TLSv1.3"
+    m = re.search(r'^\s*Protocol\s*:\s*(\S+)', raw, re.MULTILINE)
+    if m:
+        proto = m.group(1).strip()
+        print(f"[DEBUG] TLS protocol extracted (Protocol: line): {proto}")
+        return proto
+
+    # 3. Generic TLSv pattern fallback
+    m = re.search(r'TLS(?:v[\d.]+)', raw)
+    if m:
+        proto = m.group(0).strip()
+        print(f"[DEBUG] TLS protocol extracted (regex fallback): {proto}")
+        return proto
+
+    print("[WARN] TLS protocol not found in openssl output")
+    return '<none>'
 
 
 def extract_cipher_suite(raw):
-    if 'Cipher    :' in raw:
-        return raw.split('Cipher    :')[1].split('\n')[0].strip()
-    if 'Cipher :' in raw:
-        return raw.split('Cipher :')[1].split('\n')[0].strip()
+    """
+    Extract negotiated cipher suite from openssl s_client output.
+
+    Priority order:
+      1. Handshake summary line: 'New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384'
+      2. SSL-Session block:      'Cipher    : TLS_AES_256_GCM_SHA384'
+    """
+    import re
+
+    # 1. "Cipher is <suite>" — appears in the handshake summary for both TLS 1.2 and 1.3
+    m = re.search(r'Cipher\s+is\s+(\S+)', raw)
+    if m:
+        cipher = m.group(1).strip()
+        print(f"[DEBUG] Cipher extracted (handshake 'Cipher is' line): {cipher}")
+        return cipher
+
+    # 2. SSL-Session block: "    Cipher    : <suite>"
+    m = re.search(r'^\s*Cipher\s*:\s*(\S+)', raw, re.MULTILINE)
+    if m:
+        cipher = m.group(1).strip()
+        print(f"[DEBUG] Cipher extracted (SSL-Session block): {cipher}")
+        return cipher
+
+    print("[WARN] Cipher suite not found in openssl output")
     return '<none>'
 
 
