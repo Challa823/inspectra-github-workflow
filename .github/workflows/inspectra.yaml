@@ -1,0 +1,93 @@
+name: TLS Endpoint Audit
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+    inputs:
+      files_glob:
+        description: "File globs to scan"
+        required: false
+        default: "**/*.{properties,yml,yaml}"
+      branch:
+        description: "Branch to scan"
+        required: false
+        default: "main"
+  workflow_call:
+    inputs:
+      files_glob:
+        required: false
+        type: string
+        default: "**/*.{properties,yml,yaml}"
+      branch:
+        required: false
+        type: string
+        default: "main"
+
+permissions:
+  contents: write
+  security-events: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || github.ref_name }}
+
+      - name: Detect JDK
+        id: detect_jdk
+        run: python scripts/detect_jdk.py --output jdk_info.json
+
+      - name: Collect endpoints from config files
+        id: collect_endpoints
+        env:
+          FILES_GLOB: ${{ inputs.files_glob }}
+        run: python scripts/collect_endpoints.py --files-glob "${FILES_GLOB}" --base-dir . --output endpoints.txt
+
+      - name: SSL scan endpoints
+        id: ssl_scan
+        run: python scripts/ssl_scan.py --endpoints-json endpoints.json --output endpoints_scan.json
+
+      - name: Fetch Oracle Java Releases
+        id: fetch_java_releases
+        continue-on-error: true
+        run: python scripts/fetch_java_releases.py
+
+      - name: Extract TLS context
+        id: extract_tls_context
+        run: python scripts/extract_tls_context.py --jdk-info jdk_info.json --java-releases java_releases.json --endpoints-scan endpoints_scan.json --output tls_context.json
+
+      - name: Build prompt
+        id: build_prompt
+        run: python scripts/build_prompt.py --tls-context tls_context.json --system-out prompt_system.txt --user-out prompt_user.txt
+
+      - name: Call GitHub Models Chat API
+        id: call_github_models
+        run: python scripts/call_github_models.py --prompt-file prompt_user.txt
+
+      - name: Extract model content
+        id: extract_analysis
+        run: python scripts/extract_analysis.py --model-response ai_response.json
+
+      - name: Generate SARIF and Sonar files
+        run: python scripts/generate_reports.py --analysis analysis.json --endpoints-json endpoints.json --out-dir security/reports
+
+      - name: Upload SARIF to GitHub code scanning
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: security/reports/tls-audit.sarif
+
+      - name: Commit reports to repo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add security/reports/*
+          git commit -m "TLS audit reports [skip ci]" || echo "No changes to commit"
+          git push

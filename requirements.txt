@@ -1,0 +1,7 @@
+requests
+pyyaml
+jq
+openssl
+jsonschema
+github
+packaging
