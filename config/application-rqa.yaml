@@ -1,12 +1,12 @@
-# ─────────────────────────────────────────────
-# VithMinds & Chandras Host Configuration
+﻿# ─────────────────────────────────────────────
+# Challachandras Host Configuration
 # ─────────────────────────────────────────────
 
-vithminds:
-  host: www.vithminds.com
-  base-url: https://www.vithminds.com
-  api-url: https://www.vithminds.com/api/v1
-  auth-url: https://www.vithminds.com/auth
+challachandras:
+  host: www.challachandrababunaidu.com
+  base-url: https://www.challachandrababunaidu.com
+  api-url: https://www.challachandrababunaidu.com/api/v1
+  auth-url: https://www.challachandrababunaidu.com/auth
 
 chandras:
   host: iam.challachandrababunaidu.com
