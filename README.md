@@ -1,7 +1,7 @@
-# VithMinds Inspectra
+#  Inspectra
 
 ## Overview
-VithMinds Inspectra is a comprehensive tool designed for auditing TLS endpoints. It automates the process of collecting endpoint data, performing SSL scans, and generating detailed reports on the security posture of the endpoints.
+ Inspectra is a comprehensive tool designed for auditing TLS endpoints. It automates the process of collecting endpoint data, performing SSL scans, and generating detailed reports on the security posture of the endpoints.
 
 ## Features
 - **Endpoint Collection**: Extracts URLs from configuration files with specified extensions.
