@@ -1,35 +1,20 @@
 [
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "TLS_AES_256_GCM_SHA384",
+    "tlsProtocol": "<none>",
+    "cipherSuite": "<none>",
     "certificate": {
-      "subject": "CN = iam.challachandrababunaidu.com",
-      "issuer": "C = US, O = Let's Encrypt, CN = R13",
-      "notAfter": "2026-05-21T10:41:08Z",
-      "daysToExpiry": 82
+      "subject": "",
+      "issuer": "",
+      "notAfter": null,
+      "daysToExpiry": null
     },
-    "errors": [],
+    "errors": [
+      "timeout"
+    ],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/application-dsit.properties",
-    "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
-  },
-  {
-    "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "TLS_AES_256_GCM_SHA384",
-    "certificate": {
-      "subject": "CN = iam.challachandrababunaidu.com",
-      "issuer": "C = US, O = Let's Encrypt, CN = R13",
-      "notAfter": "2026-05-21T10:41:08Z",
-      "daysToExpiry": 82
-    },
-    "errors": [],
-    "url": "https://iam.challachandrababunaidu.com",
-    "env": "dsit",
-    "source_file": "config/dsit/application.properties",
     "line": 13,
     "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
   },
@@ -46,6 +31,23 @@
     "errors": [
       "timeout"
     ],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.properties",
+    "line": 13,
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/dsit/application.yml",
