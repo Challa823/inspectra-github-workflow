@@ -32,14 +32,14 @@
       "logprobs": null,
       "message": {
         "annotations": [],
-        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
+        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [\n      \"TLS_AES_256_GCM_SHA384\"\n    ],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"TLS_AES_256_GCM_SHA384\",\n      \"now\": \"Supported\",\n      \"futureMinor\": \"Unknown\",\n      \"futureMajor\": \"Supported\",\n      \"severity\": \"Unknown\",\n      \"reason\": \"Insufficient data for future minor support.\",\n      \"action\": \"Monitor for updates.\"\n    }\n  ],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
         "refusal": null,
         "role": "assistant"
       }
     }
   ],
-  "created": 1772264651,
-  "id": "chatcmpl-DE9HfkcQXfwGzhMUaUVxvlqmf5nur",
+  "created": 1772265016,
+  "id": "chatcmpl-DE9NY2QFwDnt0nr7o32pjLVN6HhKd",
   "model": "gpt-4o-mini-2024-07-18",
   "object": "chat.completion",
   "prompt_filter_results": [
@@ -71,18 +71,18 @@
   ],
   "system_fingerprint": "fp_f97eff32c5",
   "usage": {
-    "completion_tokens": 105,
+    "completion_tokens": 203,
     "completion_tokens_details": {
       "accepted_prediction_tokens": 0,
       "audio_tokens": 0,
       "reasoning_tokens": 0,
       "rejected_prediction_tokens": 0
     },
-    "prompt_tokens": 676,
+    "prompt_tokens": 689,
     "prompt_tokens_details": {
       "audio_tokens": 0,
       "cached_tokens": 0
     },
-    "total_tokens": 781
+    "total_tokens": 892
   }
 }

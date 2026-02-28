@@ -2,7 +2,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -19,7 +19,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -36,7 +36,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -53,7 +53,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -70,7 +70,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -87,7 +87,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -104,7 +104,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -121,7 +121,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -138,7 +138,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -155,7 +155,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -172,7 +172,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -189,7 +189,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -206,7 +206,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -223,7 +223,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -240,7 +240,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -257,7 +257,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",
@@ -274,7 +274,7 @@
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = iam.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = R13",
@@ -291,7 +291,7 @@
   {
     "endpoint": "www.challachandrababunaidu.com:443",
     "tlsProtocol": "TLSv1.3",
-    "cipherSuite": "<none>",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
       "subject": "CN = www.challachandrababunaidu.com",
       "issuer": "C = US, O = Let's Encrypt, CN = E7",

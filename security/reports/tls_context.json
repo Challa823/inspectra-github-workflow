@@ -2,7 +2,9 @@
   "tls version": [
     "TLSv1.3"
   ],
-  "Cipher version": [],
+  "Cipher version": [
+    "TLS_AES_256_GCM_SHA384"
+  ],
   "CurrentJdkVersion": "17.0.18",
   "futureJDKMinorUpgradeVersion": "Unknown",
   "FutureMajorUpgradedVersion": "21.0.9",
