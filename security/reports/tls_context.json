@@ -1,0 +1,10 @@
+{
+  "tls version": [
+    "TLSv1.3"
+  ],
+  "Cipher version": [],
+  "CurrentJdkVersion": "17.0.18",
+  "futureJDKMinorUpgradeVersion": "Unknown",
+  "FutureMajorUpgradedVersion": "18.0.2",
+  "uniqusslerrors": []
+}

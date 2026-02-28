@@ -1,3 +1,308 @@
-{
-  "endpoints": []
-}
+[
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/application-dsit.properties",
+    "line": 13,
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.properties",
+    "line": 13,
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.yml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.yaml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/application-dsit.properties",
+    "line": 7,
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.properties",
+    "line": 7,
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.yml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "dsit",
+    "source_file": "config/dsit/application.yaml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.properties",
+    "line": 13,
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.yml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.yaml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.properties",
+    "line": 7,
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.yml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "prod",
+    "source_file": "config/prod/application.yaml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "rqa",
+    "source_file": "config/application-rqa.yaml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "rqa",
+    "source_file": "config/application-rqa.yaml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "iam.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 82
+    },
+    "errors": [],
+    "url": "https://iam.challachandrababunaidu.com",
+    "env": "staging",
+    "source_file": "config/application-staging.yml",
+    "line": 13,
+    "context": "base-url: https://iam.challachandrababunaidu.com"
+  },
+  {
+    "endpoint": "www.challachandrababunaidu.com:443",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "<none>",
+    "certificate": {
+      "subject": "CN = www.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = E7",
+      "notAfter": "2026-03-30T22:34:58Z",
+      "daysToExpiry": 30
+    },
+    "errors": [],
+    "url": "https://www.challachandrababunaidu.com",
+    "env": "staging",
+    "source_file": "config/application-staging.yml",
+    "line": 7,
+    "context": "base-url: https://www.challachandrababunaidu.com"
+  }
+]
