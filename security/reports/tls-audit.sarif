@@ -17,7 +17,3356 @@
           ]
         }
       },
-      "results": []
+      "results": [
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:13)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "chandras.base-url=https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 13,
+                  "snippet": {
+                    "text": "base-url: https://iam.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://iam.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 13
+          }
+        },
+        {
+          "ruleId": "TLS001",
+          "level": "note",
+          "message": {
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (source: config/application-dsit.properties:7)"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-dsit.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/dsit/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "dsit",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.properties"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "challachandras.base-url=https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/prod/application.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "prod",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-rqa.yaml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "rqa",
+                  "kind": "namespace"
+                }
+              ]
+            },
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/application-staging.yml"
+                },
+                "region": {
+                  "startLine": 7,
+                  "snippet": {
+                    "text": "base-url: https://www.challachandrababunaidu.com"
+                  }
+                }
+              },
+              "logicalLocations": [
+                {
+                  "name": "staging",
+                  "kind": "namespace"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "url": "https://www.challachandrababunaidu.com",
+            "env": "dsit",
+            "sourceFile": "config/application-dsit.properties",
+            "sourceLine": 7
+          }
+        }
+      ]
     }
   ]
 }

@@ -1,3 +1,292 @@
 {
-  "issues": []
+  "issues": [
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://iam.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 13,
+          "endLine": 13,
+          "startColumn": 0,
+          "endColumn": 56
+        }
+      }
+    },
+    {
+      "engineId": "tls-endpoint-audit",
+      "ruleId": "TLS001",
+      "severity": "INFO",
+      "type": "VULNERABILITY",
+      "primaryLocation": {
+        "message": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version support is unknown. (url: https://www.challachandrababunaidu.com)",
+        "filePath": "config/application-dsit.properties",
+        "textRange": {
+          "startLine": 7,
+          "endLine": 7,
+          "startColumn": 0,
+          "endColumn": 62
+        }
+      }
+    }
+  ]
 }
