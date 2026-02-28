@@ -152,30 +152,30 @@ def main():
 
         rows.append({
             "Severity":              severity,
-            "environment":           environment,
-            "filename":              file_path,
-            "filelink":              link,
-            "Host_port":             endpoint,
-            "tlsVersion":            tls_v,
+            "Environment":           environment,
+            "FileName":              file_path,
+            "FileLink":              link,
+            "Host_Port":             endpoint,
+            "TlsVersion":            tls_v,
             "CipherVersion":         cipher,
             "CurrentJDKVersion":     cur_jdk_ver,
-            "CurrentJdkTlsStatus":   now_status,
-            "futureJdkMinorVersion": fut_minor_ver,
-            "FutureJdkMinorTlsStatus": fut_minor_status,
-            "FutureJdkMajorVersion": fut_major_ver,
-            "FutureJdkMajorTlsStatus": fut_major_status,
+            "CurrentJDKTlsStatus":   now_status,
+            "FutureJDKMinorVersion": fut_minor_ver,
+            "FutureJDKMinorTlsStatus": fut_minor_status,
+            "FutureJDKMajorVersion": fut_major_ver,
+            "FutureJDKMajorTlsStatus": fut_major_status,
             "Reason":                truncate(reason),
             "Action":                truncate(action),
         })
 
-    rows.sort(key=lambda r: (severity_rank(r["Severity"]), r["environment"] or "", r["Host_port"] or ""))
+    rows.sort(key=lambda r: (severity_rank(r["Severity"]), r["Environment"] or "", r["Host_Port"] or ""))
 
     headers = [
-        "Severity", "environment", "filename (link)", "Host_port",
-        "tlsVersion", "CipherVersion",
-        "CurrentJDKVersion", "CurrentJdkTlsStatus",
-        "futureJdkMinorVersion", "FutureJdkMinorTlsStatus",
-        "FutureJdkMajorVersion", "FutureJdkMajorTlsStatus",
+        "Severity", "Environment", "FileName (link)", "Host_Port",
+        "TlsVersion", "CipherVersion",
+        "CurrentJDKVersion", "CurrentJDKTlsStatus",
+        "FutureJDKMinorVersion", "FutureJDKMinorTlsStatus",
+        "FutureJDKMajorVersion", "FutureJDKMajorTlsStatus",
         "Reason", "Action",
     ]
 
@@ -183,24 +183,24 @@ def main():
              "| " + " | ".join(["---"] * len(headers)) + " |"]
 
     for r in rows:
-        if r["filelink"] and r["filename"]:
-            fname_disp = f"[{md_escape(r['filename'])}]({r['filelink']})"
+        if r["FileLink"] and r["FileName"]:
+            fname_disp = f"[{md_escape(r['FileName'])}]({r['FileLink']})"
         else:
-            fname_disp = md_escape(r["filename"])
+            fname_disp = md_escape(r["FileName"])
 
         row = [
             md_escape(r["Severity"]),
-            md_escape(r["environment"]),
+            md_escape(r["Environment"]),
             fname_disp,
-            md_escape(r["Host_port"]),
-            md_escape(r["tlsVersion"]),
+            md_escape(r["Host_Port"]),
+            md_escape(r["TlsVersion"]),
             md_escape(r["CipherVersion"]),
             md_escape(r["CurrentJDKVersion"]),
-            md_escape(r["CurrentJdkTlsStatus"]),
-            md_escape(r["futureJdkMinorVersion"]),
-            md_escape(r["FutureJdkMinorTlsStatus"]),
-            md_escape(r["FutureJdkMajorVersion"]),
-            md_escape(r["FutureJdkMajorTlsStatus"]),
+            md_escape(r["CurrentJDKTlsStatus"]),
+            md_escape(r["FutureJDKMinorVersion"]),
+            md_escape(r["FutureJDKMinorTlsStatus"]),
+            md_escape(r["FutureJDKMajorVersion"]),
+            md_escape(r["FutureJDKMajorTlsStatus"]),
             md_escape(r["Reason"]),
             md_escape(r["Action"]),
         ]
