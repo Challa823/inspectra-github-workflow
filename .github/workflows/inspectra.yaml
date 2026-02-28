@@ -116,6 +116,17 @@ jobs:
             --output         security/reports/analysis.json \
             --summary-out    security/reports/summary.txt
 
+      - name: Build Markdown audit table
+        run: |
+          python scripts/build_markdown_report.py \
+            --ai-response security/reports/ai_response.json \
+            --analysis security/reports/analysis.json \
+            --tls-context security/reports/tls_context.json \
+            --endpoints security/reports/endpoints.json \
+            --jdk-info security/reports/jdk_info.json \
+            --output-md security/reports/tls-audit.md
+
+
       - name: Generate SARIF and Sonar files
         run: |
           python scripts/generate_reports.py \
