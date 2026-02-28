@@ -32,14 +32,14 @@
       "logprobs": null,
       "message": {
         "annotations": [],
-        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"18.0.2\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
+        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
         "refusal": null,
         "role": "assistant"
       }
     }
   ],
-  "created": 1772264218,
-  "id": "chatcmpl-DE9AgO9dbWCoyOtx4sS52NoLDbdDb",
+  "created": 1772264651,
+  "id": "chatcmpl-DE9HfkcQXfwGzhMUaUVxvlqmf5nur",
   "model": "gpt-4o-mini-2024-07-18",
   "object": "chat.completion",
   "prompt_filter_results": [

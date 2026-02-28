@@ -6,7 +6,7 @@
   "Cipher version": [],
   "CurrentJdkVersion": "17.0.18",
   "futureJDKMinorUpgradeVersion": "Unknown",
-  "FutureMajorUpgradedVersion": "18.0.2",
+  "FutureMajorUpgradedVersion": "21.0.9",
   "uniqusslerrors": []
 }
 
