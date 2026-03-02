@@ -77,7 +77,7 @@ def coalesce(*vals, default=""):
             return v
     return default
 
-def determine_severity(now, fut_minor_status, fut_major_status, fallback="OK"):
+def determine_severity(now, fut_minor_status, fut_major_status, fallback="INFO"):
     def norm(v):
         v = (v or "").strip().lower()
         if v in ("true","supported","ok"): return "Supported"
@@ -87,12 +87,13 @@ def determine_severity(now, fut_minor_status, fut_major_status, fallback="OK"):
 
     mn = norm(fut_minor_status)
     mj = norm(fut_major_status)
-    if mn == "Not Supported":
-        return "CRITICAL"
-    if mn == "Supported" and mj == "Not Supported":
-        return "HIGH"
     if norm(now) == "Not Supported":
+        return "CRITICAL"
+    if mn == "Not Supported":
         return "HIGH"
+    if mn == "Supported" and mj == "Not Supported":
+        return "INFO"
+    
     return fallback
 
 def truncate(s, n=180):
