@@ -7,5 +7,5 @@ PyGithub
 packaging
 
 # MongoDB seed loader
-pymongo[srv]>=4.6.0   # [srv] pulls in dnspython for mongodb+srv:// Atlas URIs
+pymongo>=4.6.0   # [srv] pulls in dnspython for mongodb+srv:// Atlas URIs
 dnspython>=2.4.0      # SRV/TXT DNS lookups required for Atlas connection strings

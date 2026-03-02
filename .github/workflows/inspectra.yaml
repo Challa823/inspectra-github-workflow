@@ -133,8 +133,8 @@ jobs:
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          pip install pymongo[srv] --quiet
-          python scripts/seed_loader.py \
+          pip install pymongo --quiet
+          python mongodb/seed_loader.py \
             --mongo-uri   "$MONGO_URI" \
             --db          inspectra \
             --org         "${{ github.repository_owner }}" \

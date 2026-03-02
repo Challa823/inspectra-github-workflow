@@ -135,7 +135,7 @@ jobs:
         env:
           MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
-          pip install pymongo[srv] --quiet
+          pip install pymongo --quiet
           python workflow_repo/mongodb/seed_loader.py \
             --mongo-uri   "$MONGO_URI" \
             --db          inspectra \
