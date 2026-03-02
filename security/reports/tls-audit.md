@@ -1,6 +1,6 @@
 # TLS Endpoint Audit — Summary
 
-| Severity | environment | filename (link) | Host_port | tlsVersion | CipherVersion | CurrentJDKVersion | CurrentJdkTlsStatus | futureJdkMinorVersion | FutureJdkMinorTlsStatus | FutureJdkMajorVersion | FutureJdkMajorTlsStatus | Reason | Action |
+| Severity | Environment | FileName (link) | Host_Port | TlsVersion | CipherVersion | CurrentJDKVersion | CurrentJDKTlsStatus | FutureJDKMinorVersion | FutureJDKMinorTlsStatus | FutureJDKMajorVersion | FutureJDKMajorTlsStatus | Reason | Action |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | HIGH | dsit | [config/application-dsit.properties](https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties) | iam.challachandrababunaidu.com:443 | TLSv1.3 | TLS_AES_256_GCM_SHA384 | 17.0.18 | Supported | Unknown | Unknown | 21.0.9 | Supported | Future minor version support is unknown. | Monitor future JDK updates. |
 | HIGH | dsit | [config/dsit/application.properties](https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.properties) | iam.challachandrababunaidu.com:443 | TLSv1.3 | TLS_AES_256_GCM_SHA384 | 17.0.18 | Supported | Unknown | Unknown | 21.0.9 | Supported | Future minor version support is unknown. | Monitor future JDK updates. |
