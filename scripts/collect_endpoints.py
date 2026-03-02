@@ -124,7 +124,7 @@ if __name__ == "__main__":
 
     collected = collect_endpoints(files_glob=args.files_glob, base_dir=args.base_dir)
 
-    # Write host:port list for ssl_scan.py
+    # Write host:port list for endpoint_tls_scans.py
     with open(args.output, 'w') as f:
         for ep in collected:
             f.write(ep["host_port"] + "\n")

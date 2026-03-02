@@ -1,0 +1,218 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Inspectra MongoDB Schema Contract",
+  "version": "1.0.0",
+  "database": "inspectra",
+  "collections": {
+    "workflow_runs": {
+      "description": "One document per GitHub Actions workflow execution. Parent for all scan telemetry.",
+      "shard_key": { "org": 1, "repo": 1 },
+      "ttl": null,
+      "fields": {
+        "_id":            { "type": "string",  "description": "{org}/{repo}#{run_id}",       "required": true },
+        "schema_version": { "type": "int",     "description": "Schema version for migration", "required": true, "default": 1 },
+        "org":            { "type": "string",  "required": true },
+        "repo":           { "type": "string",  "required": true },
+        "branch":         { "type": "string",  "required": true },
+        "run_id":         { "type": "string",  "description": "GITHUB_RUN_ID",               "required": true },
+        "run_number":     { "type": "int",     "description": "GITHUB_RUN_NUMBER",            "required": false },
+        "workflow_file":  { "type": "string",  "description": "e.g. inspectra-rwf.yaml",     "required": true },
+        "triggered_by":   { "type": "string",  "description": "GitHub actor login",           "required": false },
+        "status":         { "type": "string",  "enum": ["queued","in_progress","completed","failed"], "required": true },
+        "conclusion":     { "type": "string",  "enum": ["success","failure","cancelled","skipped", null], "required": false },
+        "git_sha":        { "type": "string",  "required": false },
+        "caller_repo":    { "type": "string",  "description": "Caller repo for reusable workflow", "required": false },
+        "created_at":     { "type": "date",    "required": true },
+        "updated_at":     { "type": "date",    "required": true },
+        "completed_at":   { "type": ["date","null"], "required": false }
+      }
+    },
+
+    "jdk_snapshots": {
+      "description": "JDK detected per repository per workflow run. Ephemeral telemetry.",
+      "ttl": { "field": "created_at", "expireAfterSeconds": 7776000 },
+      "fields": {
+        "_id":                    { "type": "ObjectId", "required": true },
+        "schema_version":         { "type": "int",      "required": true, "default": 1 },
+        "run_id":                 { "type": "string",   "required": true },
+        "org":                    { "type": "string",   "required": true },
+        "repo":                   { "type": "string",   "required": true },
+        "branch":                 { "type": "string",   "required": true },
+        "vendor":                 { "type": "string",   "description": "e.g. openjdk",     "required": false },
+        "version":                { "type": "string",   "description": "e.g. 17.0.18",     "required": true },
+        "major":                  { "type": "int",      "description": "e.g. 17",            "required": true },
+        "future_minor_version":   { "type": "string",   "description": "Unknown if not determinable", "required": true },
+        "future_major_version":   { "type": "string",   "required": true },
+        "observed_at":            { "type": "date",     "required": true },
+        "created_at":             { "type": "date",     "required": true }
+      }
+    },
+
+    "endpoint_tls_scans": {
+      "description": "Raw SSL handshake result per (endpoint × source_file × run). Output of ssl_scan.py.",
+      "ttl": { "field": "created_at", "expireAfterSeconds": 2592000 },
+      "fields": {
+        "_id":            { "type": "string",  "description": "{run_id}::{endpoint}::{source_file}", "required": true },
+        "schema_version": { "type": "int",     "required": true, "default": 1 },
+        "run_id":         { "type": "string",  "required": true },
+        "org":            { "type": "string",  "required": true },
+        "repo":           { "type": "string",  "required": true },
+        "branch":         { "type": "string",  "required": true },
+        "env":            { "type": "string",  "description": "e.g. dsit, prod, rqa, staging", "required": true },
+        "endpoint":       { "type": "string",  "description": "host:port",  "required": true },
+        "tls_protocol":   { "type": "string",  "description": "e.g. TLSv1.3 or <none>", "required": true },
+        "cipher_suite":   { "type": "string",  "required": true },
+        "certificate": {
+          "type": "object",
+          "required": false,
+          "fields": {
+            "subject":         { "type": "string" },
+            "issuer":          { "type": "string" },
+            "not_after":       { "type": ["date","null"] },
+            "days_to_expiry":  { "type": ["int","null"] }
+          }
+        },
+        "errors":         { "type": "array",   "items": "string", "required": true },
+        "source_file":    { "type": "string",  "required": true },
+        "source_line":    { "type": "int",     "required": false },
+        "source_context": { "type": "string",  "required": false },
+        "url":            { "type": "string",  "required": false },
+        "observed_at":    { "type": "date",    "required": true },
+        "created_at":     { "type": "date",    "required": true }
+      }
+    },
+
+    "tls_scan_findings": {
+      "description": "AI-enriched TLS compatibility finding per (endpoint × source_file × run). Primary analytics collection.",
+      "ttl": { "field": "created_at", "expireAfterSeconds": 7776000 },
+      "fields": {
+        "_id":                        { "type": "string",  "description": "{run_id}::{endpoint}::{source_file}", "required": true },
+        "schema_version":             { "type": "int",     "required": true, "default": 1 },
+        "run_id":                     { "type": "string",  "required": true },
+        "org":                        { "type": "string",  "required": true },
+        "repo":                       { "type": "string",  "required": true },
+        "branch":                     { "type": "string",  "required": true },
+        "env":                        { "type": "string",  "required": true },
+        "endpoint":                   { "type": "string",  "required": true },
+        "tls_version":                { "type": "string",  "required": true },
+        "cipher_version":             { "type": "string",  "required": true },
+        "current_jdk_version":        { "type": "string",  "required": true },
+        "future_jdk_minor_version":   { "type": "string",  "required": true },
+        "future_jdk_major_version":   { "type": "string",  "required": true },
+        "current_jdk_tls_status":     { "type": "string",  "enum": ["Supported","Not Supported","Unknown"], "required": true },
+        "future_jdk_minor_tls_status":{ "type": "string",  "enum": ["Supported","Not Supported","Unknown"], "required": true },
+        "future_jdk_major_tls_status":{ "type": "string",  "enum": ["Supported","Not Supported","Unknown"], "required": true },
+        "severity":                   { "type": "string",  "enum": ["CRITICAL","HIGH","MEDIUM","LOW","INFO","UNKNOWN"], "required": true },
+        "reason":                     { "type": "string",  "required": false },
+        "action":                     { "type": "string",  "required": false },
+        "source_file":                { "type": "string",  "required": true },
+        "source_line":                { "type": "int",     "required": false },
+        "source_url":                 { "type": "string",  "required": false },
+        "ai_model":                   { "type": "string",  "required": false },
+        "compatibility":              { "type": "object",  "required": false, "description": "Backward-compat block from extract_analysis" },
+        "observed_at":                { "type": "date",    "required": true },
+        "created_at":                 { "type": "date",    "required": true }
+      }
+    },
+
+    "tls_endpoint_posture": {
+      "description": "Current (latest) security posture per endpoint per repo. Upserted on every run. Live dashboard view.",
+      "shard_key": { "org": 1, "repo": 1 },
+      "ttl": null,
+      "fields": {
+        "_id":                        { "type": "string",  "description": "{org}/{repo}::{endpoint}", "required": true },
+        "schema_version":             { "type": "int",     "required": true, "default": 1 },
+        "org":                        { "type": "string",  "required": true },
+        "repo":                       { "type": "string",  "required": true },
+        "endpoint":                   { "type": "string",  "required": true },
+        "last_run_id":                { "type": "string",  "required": true },
+        "last_observed_at":           { "type": "date",    "required": true },
+        "envs":                       { "type": "array",   "items": "string", "required": true },
+        "worst_severity":             { "type": "string",  "enum": ["CRITICAL","HIGH","MEDIUM","LOW","INFO","UNKNOWN"], "required": true },
+        "tls_version":                { "type": "string",  "required": true },
+        "cipher_version":             { "type": "string",  "required": true },
+        "current_jdk_version":        { "type": "string",  "required": true },
+        "current_jdk_tls_status":     { "type": "string",  "required": true },
+        "future_jdk_minor_version":   { "type": "string",  "required": true },
+        "future_jdk_minor_tls_status":{ "type": "string",  "required": true },
+        "future_jdk_major_version":   { "type": "string",  "required": true },
+        "future_jdk_major_tls_status":{ "type": "string",  "required": true },
+        "reason":                     { "type": "string",  "required": false },
+        "action":                     { "type": "string",  "required": false },
+        "cert_not_after":             { "type": ["date","null"], "required": false },
+        "cert_days_to_expiry":        { "type": ["int","null"],  "required": false },
+        "cert_issuer":                { "type": "string",  "required": false },
+        "finding_count":              { "type": "int",     "required": true },
+        "updated_at":                 { "type": "date",    "required": true }
+      }
+    },
+
+    "certificate_expiry": {
+      "description": "Deduplicated certificate expiry tracker per endpoint. Upserted on every scan. Enables expiry alerting.",
+      "ttl": null,
+      "fields": {
+        "_id":                  { "type": "string",  "description": "{org}/{repo}::{endpoint}", "required": true },
+        "schema_version":       { "type": "int",     "required": true, "default": 1 },
+        "org":                  { "type": "string",  "required": true },
+        "repo":                 { "type": "string",  "required": true },
+        "endpoint":             { "type": "string",  "required": true },
+        "subject":              { "type": "string",  "required": false },
+        "issuer":               { "type": "string",  "required": false },
+        "not_after":            { "type": ["date","null"], "required": false },
+        "days_to_expiry":       { "type": ["int","null"],  "required": false },
+        "is_expired":           { "type": "bool",    "required": true },
+        "alert_threshold_days": { "type": "int",     "required": true, "default": 30 },
+        "last_run_id":          { "type": "string",  "required": true },
+        "last_observed_at":     { "type": "date",    "required": true },
+        "updated_at":           { "type": "date",    "required": true }
+      }
+    },
+
+    "ai_model_invocations": {
+      "description": "Audit log of all GitHub Models API calls. One per workflow run.",
+      "ttl": { "field": "created_at", "expireAfterSeconds": 2592000 },
+      "fields": {
+        "_id":                  { "type": "string",  "description": "{run_id}",  "required": true },
+        "schema_version":       { "type": "int",     "required": true, "default": 1 },
+        "run_id":               { "type": "string",  "required": true },
+        "org":                  { "type": "string",  "required": true },
+        "repo":                 { "type": "string",  "required": true },
+        "model":                { "type": "string",  "required": true },
+        "prompt_tokens":        { "type": "int",     "required": false },
+        "completion_tokens":    { "type": "int",     "required": false },
+        "total_tokens":         { "type": "int",     "required": false },
+        "finish_reason":        { "type": "string",  "enum": ["stop","length","content_filter","null"], "required": false },
+        "system_prompt_hash":   { "type": "string",  "description": "SHA-256; raw prompt NOT stored", "required": false },
+        "user_prompt_hash":     { "type": "string",  "description": "SHA-256; raw prompt NOT stored", "required": false },
+        "content_filtered":     { "type": "bool",    "required": true },
+        "response_object_id":   { "type": "string",  "description": "AI API response id field", "required": false },
+        "observed_at":          { "type": "date",    "required": true },
+        "created_at":           { "type": "date",    "required": true }
+      }
+    },
+
+    "java_releases_cache": {
+      "description": "Cache of Java release data from GitHub Releases API. Singleton document, refreshed daily.",
+      "ttl": { "field": "fetched_at", "expireAfterSeconds": 86400 },
+      "fields": {
+        "_id":            { "type": "string",  "description": "java-releases (singleton)", "required": true },
+        "schema_version": { "type": "int",     "required": true, "default": 1 },
+        "fetched_at":     { "type": "date",    "required": true },
+        "source_run_id":  { "type": "string",  "required": false },
+        "releases": {
+          "type": "array",
+          "required": true,
+          "items": {
+            "type": "object",
+            "fields": {
+              "version":      { "type": "string" },
+              "major":        { "type": "int" },
+              "release_date": { "type": ["date","null"] }
+            }
+          }
+        },
+        "created_at": { "type": "date", "required": true }
+      }
+    }
+  }
+}

@@ -59,10 +59,10 @@ jobs:
           cp security/reports/endpoints.txt endpoints.txt
           cp security/reports/endpoints.json endpoints.json || true
 
-      - name: SSL scan endpoints
-        id: ssl_scan
+      - name: Endpoint TLS scan
+        id: endpoint_tls_scan
         run: |
-          python scripts/ssl_scan.py \
+          python scripts/endpoint_tls_scans.py \
             --endpoints-json endpoints.json \
             --output security/reports/endpoints_scan.json
           cp security/reports/endpoints_scan.json endpoints_scan.json
@@ -127,6 +127,26 @@ jobs:
             --jdk-info security/reports/jdk_info.json \
             --output-md security/reports/tls-audit.md
 
+
+      - name: Load results into MongoDB
+        if: always()
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          pip install pymongo[srv] --quiet
+          python scripts/seed_loader.py \
+            --mongo-uri   "$MONGO_URI" \
+            --db          inspectra \
+            --org         "${{ github.repository_owner }}" \
+            --repo        "${{ github.event.repository.name }}" \
+            --branch      "${{ github.ref_name }}" \
+            --run-id      "${{ github.run_id }}" \
+            --git-sha     "${{ github.sha }}" \
+            --workflow-file "inspectra.yaml" \
+            --triggered-by  "${{ github.actor }}" \
+            --conclusion    "${{ job.status }}" \
+            --ai-model      "gpt-4o" \
+            --reports-dir   "security/reports"
 
       - name: Generate SARIF and Sonar files
         run: |

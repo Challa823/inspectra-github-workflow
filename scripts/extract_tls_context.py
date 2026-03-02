@@ -4,7 +4,7 @@ extract_tls_context.py
 Pre-processing step that reads:
   - jdk_info.json         (from detect_jdk.py)
   - java_releases.json    (from fetch_java_releases.py)
-  - endpoints_scan.json   (from ssl_scan.py)
+  - endpoints_scan.json   (from endpoint_tls_scans.py)
 
 Extracts and writes tls_context.json with:
   {

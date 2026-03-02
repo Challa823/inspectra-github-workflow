@@ -222,7 +222,7 @@ def main():
     )
     parser.add_argument(
         "--endpoints-scan", default="endpoints_scan.json",
-        help="Path to endpoints_scan.json (produced by ssl_scan.py)"
+        help="Path to endpoints_scan.json (produced by endpoint_tls_scans.py)"
     )
     parser.add_argument(
         "--output", default="analysis.json",

@@ -6,9 +6,9 @@ import argparse
 from datetime import datetime, timezone
 
 
-def ssl_scan_endpoint(ep_meta):
+def scan_tls_endpoint(ep_meta):
     """
-    Perform SSL scan for a single endpoint.
+    Perform TLS scan for a single endpoint.
     ep_meta: dict from collect_endpoints.py JSON
               keys: host_port, url, env, source_file, line, context
     Returns enriched scan result dict.
@@ -48,7 +48,7 @@ def ssl_scan_endpoint(ep_meta):
     }
 
 
-def ssl_scan(endpoints_meta):
+def scan_all_tls_endpoints(endpoints_meta):
     """
     Scan all endpoints from collect_endpoints.py JSON output.
     endpoints_meta: list of dicts from endpoints.json
@@ -56,7 +56,7 @@ def ssl_scan(endpoints_meta):
     results = []
     for ep_meta in endpoints_meta:
         print(f"[INFO] Scanning {ep_meta['host_port']} (env={ep_meta.get('env','?')}, src={ep_meta.get('source_file','?')}:{ep_meta.get('line','?')})")
-        result = ssl_scan_endpoint(ep_meta)
+        result = scan_tls_endpoint(ep_meta)
         results.append(result)
     return results
 
@@ -213,7 +213,7 @@ if __name__ == '__main__':
         endpoints_meta = json.load(f)
 
     print(f"[INFO] Loaded {len(endpoints_meta)} endpoints from {args.endpoints_json}")
-    scan_results = ssl_scan(endpoints_meta)
+    scan_results = scan_all_tls_endpoints(endpoints_meta)
 
     with open(args.output, 'w') as f:
         json.dump(scan_results, f, indent=2)
