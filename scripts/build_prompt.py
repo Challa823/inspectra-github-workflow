@@ -32,7 +32,7 @@ Assumptions (apply conservatively):
 Severity mapping:
 - NOT supported in futureMinor => "CRITICAL"
 - Supported in futureMinor but NOT in futureMajor => "HIGH"
-- Supported in both => "OK"
+- Supported in both => "INFO"
 
 # OUTPUT - PAGE 1 (exact structure, valid JSON only, no markdown)
 1) "extraction" object — copy the input context exactly as-is (same keys, same values).
@@ -43,7 +43,7 @@ Severity mapping:
      "now":            "Supported|Not Supported|Unknown",
      "futureMinor":    "Supported|Not Supported|Unknown",
      "futureMajor":    "Supported|Not Supported|Unknown",
-     "severity":       "CRITICAL|HIGH|OK",
+     "severity":       "CRITICAL|HIGH|INFO",
      "reason":         "<short reason, max 140 chars>",
      "action":         "<short remediation, max 140 chars>"
    }
