@@ -120,11 +120,33 @@ def _worst_severity(*severities: str | None) -> str:
     return best
 
 
+# Canonical order for severity summary
+_SEVERITY_ORDER = ["CRITICAL", "HIGH", "WARNING", "INFO"]
+
+
+def build_severity_summary(analysis: list) -> dict:
+    """Count findings per severity for a run.
+    Uses lowercase MongoDB field names: critical / high / warning / info.
+    Missing or unrecognised severity is treated as 'info'."""
+    counts = {s.lower(): 0 for s in _SEVERITY_ORDER}
+    for entry in analysis:
+        sev = (entry.get("severity") or "INFO").upper()
+        key = sev.lower()
+        if key not in counts:
+            key = "info"
+        counts[key] += 1
+    return counts
+
+
 # ---------------------------------------------------------------------------
 # Document builders
 # ---------------------------------------------------------------------------
 
-def build_workflow_run(args: argparse.Namespace, now: datetime) -> dict:
+def build_workflow_run(
+    args: argparse.Namespace,
+    now: datetime,
+    severity_summary: dict | None = None,
+) -> dict:
     return {
         "_id": f"{args.org}/{args.repo}#{args.run_id}",
         "schema_version": SCHEMA_VERSION,
@@ -139,6 +161,7 @@ def build_workflow_run(args: argparse.Namespace, now: datetime) -> dict:
         "conclusion": args.conclusion or "success",
         "git_sha": args.git_sha or None,
         "caller_repo": args.caller_repo or None,
+        "severity_summary": severity_summary or {"critical": 0, "high": 0, "warning": 0, "info": 0},
         "created_at": now,
         "updated_at": now,
         "completed_at": now,
@@ -451,7 +474,9 @@ def main() -> None:
                 pass
 
     # ── build documents ───────────────────────────────────────────────────────
-    wr_doc    = build_workflow_run(args, now)
+    sev_summary = build_severity_summary(analysis)
+    log.info("Severity summary: %s", " | ".join(f"{k}={v}" for k, v in sev_summary.items()))
+    wr_doc    = build_workflow_run(args, now, severity_summary=sev_summary)
     jdk_doc   = build_jdk_snapshot(jdk_data, tls_ctx, args, now) if jdk_data else None
     ssl_docs  = build_ssl_findings(ssl_scan, args, now)
     tls_docs  = build_tls_findings(analysis, args, now)

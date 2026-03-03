@@ -33,9 +33,26 @@ def get_support_status(item):
     return "Unknown"
 
 
-def generate_sarif_report(analysis_data, endpoints_meta):
+# Canonical severity order
+_SEVERITY_ORDER = ["CRITICAL", "HIGH", "WARNING", "INFO"]
+
+
+def count_severities(analysis_data: list) -> dict:
+    """Count findings per severity in CRITICAL→HIGH→WARNING→INFO order.
+    Missing or unrecognised severity is treated as INFO."""
+    counts: dict[str, int] = {s: 0 for s in _SEVERITY_ORDER}
+    for item in analysis_data:
+        sev = (item.get("severity") or "INFO").upper()
+        if sev not in counts:
+            sev = "INFO"
+        counts[sev] += 1
+    return counts
+
+
+def generate_sarif_report(analysis_data, endpoints_meta, severity_summary: dict | None = None):
     """
     Generate SARIF report enriched with source file and line from collect_endpoints.py output.
+    severity_summary is added to the run-level properties (does not affect SARIF schema validity).
     """
     sarif_report = {
         "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
@@ -50,6 +67,9 @@ def generate_sarif_report(analysis_data, endpoints_meta):
                         "shortDescription": {"text": "TLS endpoint SSL/TLS compatibility check"}
                     }]
                 }
+            },
+            "properties": {
+                "severitySummary": severity_summary or count_severities(analysis_data)
             },
             "results": []
         }]
@@ -119,12 +139,16 @@ def generate_sarif_report(analysis_data, endpoints_meta):
     return sarif_report
 
 
-def generate_sonar_report(analysis_data, endpoints_meta):
+def generate_sonar_report(analysis_data, endpoints_meta, severity_summary: dict | None = None):
     """
     Generate SonarQube Generic Issue report enriched with source file and line
     from collect_endpoints.py output.
+    severity_summary added as root-level metadata (not part of Sonar schema, informational).
     """
-    sonar_report = {"issues": []}
+    sonar_report = {
+        "severitySummary": severity_summary or count_severities(analysis_data),
+        "issues": [],
+    }
 
     for item in analysis_data:
         endpoint = item.get("endpoint", "")
@@ -193,10 +217,14 @@ def main():
     # Load enriched endpoint metadata from collect_endpoints.py output
     endpoints_meta = load_endpoints_metadata(args.endpoints_json)
 
-    sarif_report = generate_sarif_report(analysis_data, endpoints_meta)
+    # ── Compute severity summary (shared across both reports) ─────────────────
+    sev_summary = count_severities(analysis_data)
+    print("[INFO] Severity summary:", " | ".join(f"{k}={v}" for k, v in sev_summary.items()))
+
+    sarif_report = generate_sarif_report(analysis_data, endpoints_meta, severity_summary=sev_summary)
     save_report(sarif_report, os.path.join(args.out_dir, "tls-audit.sarif"))
 
-    sonar_report = generate_sonar_report(analysis_data, endpoints_meta)
+    sonar_report = generate_sonar_report(analysis_data, endpoints_meta, severity_summary=sev_summary)
     save_report(sonar_report, os.path.join(args.out_dir, "sonar-tls-audit.json"))
 
     print(f"[INFO] Reports generated successfully ({len(analysis_data)} endpoints processed).")

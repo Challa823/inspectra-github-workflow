@@ -108,6 +108,22 @@ def truncate(s, n=180):
     return (s[:n] + "…") if len(s) > n else s
 
 
+# Canonical severity order — used for summary table and sorting
+SEVERITY_ORDER = ["CRITICAL", "HIGH", "WARNING", "INFO"]
+
+
+def count_severities(rows: list) -> dict:
+    """Count rows per severity in CRITICAL→HIGH→WARNING→INFO order.
+    Any unrecognised or missing severity is treated as INFO."""
+    counts: dict[str, int] = {s: 0 for s in SEVERITY_ORDER}
+    for r in rows:
+        sev = (r.get("Severity") or "INFO").upper()
+        if sev not in counts:
+            sev = "INFO"
+        counts[sev] += 1
+    return counts
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--ai-response",  default="ai_response.json",              help="(unused, kept for backward compat)")
@@ -178,6 +194,18 @@ def main():
 
     rows.sort(key=lambda r: (severity_rank(r["Severity"]), r["Environment"] or "", r["Host_Port"] or ""))
 
+    # ── Severity summary table ────────────────────────────────────────────────
+    severity_counts = count_severities(rows)
+    summary_lines = [
+        "## Severity Summary\n",
+        "| Severity | Count |",
+        "| --- | --- |",
+    ]
+    for sev in SEVERITY_ORDER:
+        summary_lines.append(f"| {sev} | {severity_counts[sev]} |")
+    summary_md = "\n".join(summary_lines) + "\n\n"
+    print("[INFO] Severity summary:", " | ".join(f"{k}={v}" for k, v in severity_counts.items()))
+
     headers = [
         "Severity", "Environment", "FileName (link)", "Host_Port",
         "TlsVersion", "CipherVersion",
@@ -214,7 +242,8 @@ def main():
         ]
         lines.append("| " + " | ".join(row) + " |")
 
-    md = "# TLS Endpoint Audit — Summary\n\n" + "\n".join(lines) + "\n"
+    detail_md = "## Endpoint Detail\n\n" + "\n".join(lines) + "\n"
+    md = "# TLS Endpoint Audit — Summary\n\n" + summary_md + detail_md
 
     os.makedirs(os.path.dirname(args.output_md), exist_ok=True)
     with open(args.output_md, "w", encoding="utf-8") as f:
