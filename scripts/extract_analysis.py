@@ -157,11 +157,12 @@ def extract_analysis(
                 "futureMajor": future_major_val,
             },
 
-            # ── Source location (from endpoints_scan) ─────────────────────
+            # ── Source location (from endpoints_scan) ────────────────────────────────
             "source_url":  ep.get("url",         ""),
             "env":         ep.get("env",          ""),
             "source_file": ep.get("source_file",  ""),
             "line":        ep.get("line",          0),
+            "git_link":    ep.get("git_link",      ""),  # GitHub blob URL with #L anchor
         })
 
     # ── Fallback: AI returned a plain list ────────────────────────────────────

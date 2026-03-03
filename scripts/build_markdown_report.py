@@ -59,11 +59,18 @@ def md_escape(text):
     s = str(text)
     return s.replace("|", r"\|")
 
-def build_file_link(server_url, repo, ref, path):
+def build_file_link(server_url, repo, ref, path, line=None):
+    """Build a GitHub blob URL.  When *line* is provided the anchor #L<n> is
+    appended so the link lands on the exact source line, e.g.
+    https://github.com/org/repo/blob/main/config/app.properties#L7
+    """
     if not path: return ""
     server = server_url or "https://github.com"
     ref_or_sha = ref or os.getenv("GITHUB_SHA", "")
-    return f"{server}/{repo}/blob/{quote(ref_or_sha)}/{path}"
+    url = f"{server}/{repo}/blob/{quote(ref_or_sha)}/{path}"
+    if line and int(line) > 0:
+        url += f"#L{int(line)}"
+    return url
 
 def severity_rank(sev):
     s = (sev or "").upper()
@@ -170,9 +177,23 @@ def main():
         # environment comes directly from the 'env' field
         environment = item.get("env") or ""
 
-        # source_file is the filename; build a GitHub blob link from it
-        file_path = item.get("source_file") or ""
-        link = build_file_link(server_url, repo, ref_name or os.getenv("GITHUB_SHA", ""), file_path) if file_path else ""
+        # source_file is the filename; build a GitHub blob link pointing to the
+        # exact line where the URL was found (e.g. …/app.properties#L7).
+        # Prefer the pre-built git_link from collect_endpoints.py (already
+        # carries the #L anchor); fall back to constructing from parts.
+        file_path   = item.get("source_file") or ""
+        source_line = item.get("line") or item.get("source_line") or 0
+        link = (
+            item.get("git_link")
+            or (
+                build_file_link(
+                    server_url, repo,
+                    ref_name or os.getenv("GITHUB_SHA", ""),
+                    file_path,
+                    line=source_line,
+                ) if file_path else ""
+            )
+        )
 
         rows.append({
             "Severity":              severity,

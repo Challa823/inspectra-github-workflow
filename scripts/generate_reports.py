@@ -128,10 +128,11 @@ def generate_sarif_report(analysis_data, endpoints_meta, severity_summary: dict 
             },
             "locations": locations,
             "properties": {
-                "url": meta_entries[0]["url"] if meta_entries else endpoint,
-                "env": meta_entries[0]["env"] if meta_entries else "unknown",
-                "sourceFile": meta_entries[0]["source_file"] if meta_entries else "",
-                "sourceLine": meta_entries[0]["line"] if meta_entries else 0,
+                "url":        meta_entries[0]["url"]               if meta_entries else endpoint,
+                "env":        meta_entries[0]["env"]               if meta_entries else "unknown",
+                "sourceFile": meta_entries[0]["source_file"]       if meta_entries else "",
+                "sourceLine": meta_entries[0]["line"]              if meta_entries else 0,
+                "gitLink":    meta_entries[0].get("git_link", "")  if meta_entries else "",
             }
         }
         sarif_report["runs"][0]["results"].append(result)
@@ -168,15 +169,17 @@ def generate_sonar_report(analysis_data, endpoints_meta, severity_summary: dict 
         meta = meta_entries[0] if meta_entries else {}
 
         source_file = meta.get("source_file", "security/reports").replace("\\", "/")
-        line = meta.get("line", 1)
-        env = meta.get("env", "unknown")
-        url = meta.get("url", endpoint)
+        line     = meta.get("line", 1)
+        env      = meta.get("env", "unknown")
+        url      = meta.get("url", endpoint)
+        git_link = meta.get("git_link", "")
 
         issue = {
             "engineId": "tls-endpoint-audit",
             "ruleId": "TLS001",
             "severity": severity,
             "type": "VULNERABILITY",
+            "gitLink": git_link,
             "primaryLocation": {
                 "message": f"[{env.upper()}] {endpoint} — {status} — {reason} (url: {url})",
                 "filePath": source_file,

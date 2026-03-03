@@ -3,6 +3,7 @@ import glob
 import re
 import json
 import argparse
+from urllib.parse import quote
 
 
 def detect_env_from_path(filepath):
@@ -103,13 +104,26 @@ def collect_endpoints(files_glob="**/*.{properties,yml,yaml}", base_dir="."):
                     continue
                 seen.add(key)
 
+                # Build a direct GitHub blob link to the exact line so that
+                # downstream Markdown / SARIF / Sonar reports can use it
+                # without needing to re-derive env vars.
+                _gh_server = os.getenv("GITHUB_SERVER_URL",  "https://github.com")
+                _gh_repo   = os.getenv("GITHUB_REPOSITORY",  "")
+                _gh_ref    = os.getenv("GITHUB_REF_NAME", "") or os.getenv("GITHUB_SHA", "")
+                _line_no   = hit["line"]
+                git_link   = (
+                    f"{_gh_server}/{_gh_repo}/blob/{quote(_gh_ref)}/{rel_path}#L{_line_no}"
+                    if _gh_repo and _gh_ref else ""
+                )
+
                 endpoints.append({
-                    "host_port": hostport,
-                    "url": url,
-                    "env": env,                  # derived from path
-                    "source_file": rel_path,     # relative file path
-                    "line": hit["line"],          # line number in file
-                    "context": hit["context"]     # raw line text
+                    "host_port":   hostport,
+                    "url":         url,
+                    "env":         env,        # derived from path
+                    "source_file": rel_path,   # relative file path
+                    "line":        hit["line"], # line number in file
+                    "context":     hit["context"],
+                    "git_link":    git_link,    # GitHub blob URL with #L anchor
                 })
 
     return sorted(endpoints, key=lambda x: (x["env"], x["host_port"]))

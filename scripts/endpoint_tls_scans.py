@@ -39,12 +39,13 @@ def scan_tls_endpoint(ep_meta):
         "cipherSuite": extract_cipher_suite(raw),
         "certificate": cert_info,
         "errors":      extract_errors(raw),
-        # Metadata from collect_endpoints.py
-        "url":         ep_meta.get("url", ""),
-        "env":         ep_meta.get("env", "unknown"),
+        # Metadata from collect_endpoints.py (passed through verbatim)
+        "url":         ep_meta.get("url",         ""),
+        "env":         ep_meta.get("env",         "unknown"),
         "source_file": ep_meta.get("source_file", ""),
-        "line":        ep_meta.get("line", 0),
-        "context":     ep_meta.get("context", ""),
+        "line":        ep_meta.get("line",        0),
+        "context":     ep_meta.get("context",     ""),
+        "git_link":    ep_meta.get("git_link",    ""),  # GitHub blob URL with #L anchor
     }
 
 
