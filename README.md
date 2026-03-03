@@ -53,53 +53,37 @@ with:
 
 ## 2. Architecture Diagrams
 
-### 2.1 End-to-End Pipeline
+### 2.1 Sequence Diagram
 
-```
-┌──────────────────────────────────────────────────────────────────────────────┐
-│                         GITHUB ACTIONS RUNNER                                │
-│                                                                              │
-│  ① detect_jdk.py       ② collect_endpoints.py    ③ endpoint_tls_scans.py  │
-│  ┌──────────────┐       ┌───────────────────┐       ┌──────────────────┐    │
-│  │ java -version│──────▶│ Glob *.properties │──────▶│ openssl s_client │    │
-│  │  jdk_info    │       │     *.yml *.yaml  │       │  (per endpoint)  │    │
-│  └──────────────┘       └───────────────────┘       └────────┬─────────┘    │
-│                                                              │               │
-│  ④ fetch_java_releases.py                                   │               │
-│  ┌───────────────────────┐       ⑤ extract_tls_context.py  │               │
-│  │ Oracle / Adoptium API │──────▶┌──────────────────────┐◀──┘               │
-│  │  java_releases.json   │       │ Merge JDK + releases │                   │
-│  └───────────────────────┘       │   + scan metadata    │                   │
-│                                  └──────────┬───────────┘                   │
-│                                             │                               │
-│  ⑥ build_prompt.py                          │                               │
-│  ┌───────────────────────┐                  │                               │
-│  │ System + user prompts │◀─────────────────┘                               │
-│  │  (prompt_*.txt)       │                                                  │
-│  └──────────┬────────────┘                                                  │
-│             │                                                                │
-│  ⑦ call_github_models.py                                                   │
-│  ┌─────────────────────────────────────────┐                                │
-│  │  POST /v1/chat/completions (gpt-4o)     │                                │
-│  │  GitHub Models Endpoint                 │                                │
-│  │  → ai_response.json                     │                                │
-│  └──────────┬──────────────────────────────┘                                │
-│             │                                                                │
-│  ⑧ extract_analysis.py                                                     │
-│  ┌────────────────────────────────────────┐                                 │
-│  │ Join endpoints_scan × AI compatibility │                                 │
-│  │ → analysis.json + summary.txt          │                                 │
-│  └─────────┬───────────────┬──────────────┘                                 │
-│            │               │                                                │
-│    ⑨ Markdown      ⑩ SARIF / Sonar    ⑪ MongoDB                          │
-│  ┌──────────────┐ ┌──────────────────┐ ┌───────────────┐                   │
-│  │ tls-audit.md │ │ tls-audit.sarif  │ │ seed_loader   │                   │
-│  │ (Step Summary│ │ sonar-tls-       │ │ (8 collections│                   │
-│  │  + file)     │ │ audit.json       │ │  upserted)    │                   │
-│  └──────────────┘ └──────────────────┘ └───────────────┘                   │
-│                                                                              │
-│  ⑫ git add security/reports/ && git push                                   │
-└──────────────────────────────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+    participant Repo
+    participant GHA as GitHub Actions
+    participant RWF as Reusable Workflow
+    participant PS as Python Scripts
+    participant AI as AI Model
+    participant MDB as MongoDB
+
+    Repo->>GHA: Trigger Workflow
+    GHA->>RWF: Run inspectra-rwf.yaml
+    RWF->>PS: collect_endpoints.py
+    PS-->>RWF: endpoints.json (with file & line mapping)
+    RWF->>PS: endpoint_tls_scans.py (openssl)
+    PS-->>RWF: endpoints_scan.json
+    RWF->>PS: detect_jdk.py
+    RWF->>PS: fetch_java_releases.py
+    PS-->>RWF: jdk_info.json + java_releases.json
+    RWF->>PS: extract_tls_context.py
+    PS-->>RWF: tls_context.json
+    RWF->>AI: Send prompt_system + prompt_user
+    AI-->>RWF: ai_response.json
+    RWF->>PS: extract_analysis.py
+    PS-->>RWF: analysis.json
+    RWF->>PS: generate_reports.py
+    PS-->>RWF: markdown + SARIF + Sonar JSON
+    RWF->>PS: seed_loader.py
+    PS->>MDB: Insert run data
+    RWF-->>Repo: Commit /security/reports/*
 ```
 
 ### 2.2 Reusable vs Standalone Workflow
@@ -127,18 +111,72 @@ with:
 
 ### 2.3 Data Flow Diagram
 
+```mermaid
+flowchart LR
+    A["config/\n*.properties\n*.yml / *.yaml"] -->|URLs extracted| B[endpoints.json\nhost:port, file, line, env]
+    B -->|openssl s_client| C[endpoints_scan.json\ntls_protocol, cipher,\ncert, errors]
+    D[jdk_info.json] --> E[tls_context.json]
+    F[java_releases.json] --> E
+    C --> E
+    E -->|build_prompt.py| G[prompt_system.txt\nprompt_user.txt]
+    G -->|gpt-4o| H[ai_response.json]
+    H -->|extract_analysis.py\njoin on tls×cipher| I[analysis.json\nseverity-rated rows]
+    I --> J[tls-audit.md]
+    I --> K[tls-audit.sarif]
+    I --> L[sonar-tls-audit.json]
+    I --> M[(MongoDB\n8 collections)]
 ```
-config/             endpoints.json          endpoints_scan.json
-*.properties  ──▶  (host:port, file,  ──▶  (tls_protocol,          ──▶  analysis.json
-*.yml              line, env, url)          cipher_suite, cert,          (joined, severity-
-*.yaml                                      errors, source_file)          rated rows)
-                                                                              │
-                         jdk_info.json                                        │
-                         java_releases.json                                   │
-                              │                                               │
-                              ▼                                               ▼
-                        tls_context.json ──▶ prompt_*.txt ──▶ ai_response.json
-                                                                 (gpt-4o output)
+
+### 2.4 Data Model
+
+```mermaid
+erDiagram
+    RUN_METADATA {
+        string run_id
+        string repo
+        string branch
+        datetime executed_at
+        object severity_summary
+    }
+    ENDPOINT_TLS_SCANS {
+        string run_id
+        string endpoint_key
+        string tls_version
+        string cipher
+        string cert_expires
+        string errors
+        datetime observed_at
+    }
+    COMPATIBILITY_DECISIONS {
+        string run_id
+        string endpoint_key
+        string now_status
+        string futureMinor
+        string futureMajor
+        string severity
+        string reason
+        string action
+    }
+    ENDPOINTS_CATALOG {
+        string endpoint_key
+        string host
+        int    port
+        string source_file
+        int    line
+        string git_link
+    }
+    POSTURE_CURRENT {
+        string   endpoint_key
+        string   severity
+        string   reason
+        string   action
+        string   last_run_id
+        datetime last_updated
+    }
+
+    RUN_METADATA      ||--o{ ENDPOINT_TLS_SCANS       : "contains"
+    RUN_METADATA      ||--o{ COMPATIBILITY_DECISIONS   : "generates"
+    ENDPOINTS_CATALOG ||--o{ POSTURE_CURRENT           : "updates"
 ```
 
 ---
