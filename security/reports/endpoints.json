@@ -5,7 +5,8 @@
     "env": "dsit",
     "source_file": "config/application-dsit.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -13,7 +14,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.properties#L13"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -21,7 +23,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yml#L13"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -29,7 +32,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yaml#L13"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -37,7 +41,8 @@
     "env": "dsit",
     "source_file": "config/application-dsit.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -45,7 +50,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.properties#L7"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -53,7 +59,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yml#L7"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -61,7 +68,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yaml#L7"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -69,7 +77,8 @@
     "env": "prod",
     "source_file": "config/prod/application.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.properties#L13"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -77,7 +86,8 @@
     "env": "prod",
     "source_file": "config/prod/application.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yml#L13"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -85,7 +95,8 @@
     "env": "prod",
     "source_file": "config/prod/application.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yaml#L13"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -93,7 +104,8 @@
     "env": "prod",
     "source_file": "config/prod/application.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.properties#L7"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -101,7 +113,8 @@
     "env": "prod",
     "source_file": "config/prod/application.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yml#L7"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -109,7 +122,8 @@
     "env": "prod",
     "source_file": "config/prod/application.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yaml#L7"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -117,7 +131,8 @@
     "env": "rqa",
     "source_file": "config/application-rqa.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-rqa.yaml#L13"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -125,7 +140,8 @@
     "env": "rqa",
     "source_file": "config/application-rqa.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-rqa.yaml#L7"
   },
   {
     "host_port": "iam.challachandrababunaidu.com:443",
@@ -133,7 +149,8 @@
     "env": "staging",
     "source_file": "config/application-staging.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-staging.yml#L13"
   },
   {
     "host_port": "www.challachandrababunaidu.com:443",
@@ -141,6 +158,7 @@
     "env": "staging",
     "source_file": "config/application-staging.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-staging.yml#L7"
   }
 ]

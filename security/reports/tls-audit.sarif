@@ -30,7 +30,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -209,14 +209,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -395,14 +396,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -581,14 +583,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -767,14 +770,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -953,14 +957,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1139,14 +1144,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1325,14 +1331,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1511,14 +1518,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -1697,14 +1705,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -1883,14 +1892,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -2069,14 +2079,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2255,14 +2266,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2441,14 +2453,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2627,14 +2640,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -2813,14 +2827,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2999,14 +3014,15 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -3185,14 +3201,15 @@
             "url": "https://iam.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 13
+            "sourceLine": 13,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
           }
         },
         {
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -3371,7 +3388,8 @@
             "url": "https://www.challachandrababunaidu.com",
             "env": "dsit",
             "sourceFile": "config/application-dsit.properties",
-            "sourceLine": 7
+            "sourceLine": 7,
+            "gitLink": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
           }
         }
       ]

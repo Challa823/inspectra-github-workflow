@@ -8,7 +8,5 @@
   "CurrentJdkVersion": "17.0.18",
   "futureJDKMinorUpgradeVersion": "Unknown",
   "FutureMajorUpgradedVersion": "21.0.9",
-  "uniqusslerrors": [
-    "timeout"
-  ]
+  "uniqusslerrors": []
 }

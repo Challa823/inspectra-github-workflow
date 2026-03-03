@@ -1,79 +1,75 @@
 [
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/application-dsit.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L13"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/dsit/application.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.properties#L13"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/dsit/application.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yml#L13"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "dsit",
     "source_file": "config/dsit/application.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yaml#L13"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -90,7 +86,8 @@
     "env": "dsit",
     "source_file": "config/application-dsit.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-dsit.properties#L7"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -107,7 +104,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.properties#L7"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -124,7 +122,8 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yml#L7"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -141,64 +140,62 @@
     "env": "dsit",
     "source_file": "config/dsit/application.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/dsit/application.yaml#L7"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "prod",
     "source_file": "config/prod/application.properties",
     "line": 13,
-    "context": "chandras.base-url=https://iam.challachandrababunaidu.com"
+    "context": "chandras.base-url=https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.properties#L13"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "prod",
     "source_file": "config/prod/application.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yml#L13"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "prod",
     "source_file": "config/prod/application.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yaml#L13"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -215,7 +212,8 @@
     "env": "prod",
     "source_file": "config/prod/application.properties",
     "line": 7,
-    "context": "challachandras.base-url=https://www.challachandrababunaidu.com"
+    "context": "challachandras.base-url=https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.properties#L7"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -232,7 +230,8 @@
     "env": "prod",
     "source_file": "config/prod/application.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yml#L7"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -249,26 +248,26 @@
     "env": "prod",
     "source_file": "config/prod/application.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/prod/application.yaml#L7"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "rqa",
     "source_file": "config/application-rqa.yaml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-rqa.yaml#L13"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -285,26 +284,26 @@
     "env": "rqa",
     "source_file": "config/application-rqa.yaml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-rqa.yaml#L7"
   },
   {
     "endpoint": "iam.challachandrababunaidu.com:443",
-    "tlsProtocol": "<none>",
-    "cipherSuite": "<none>",
+    "tlsProtocol": "TLSv1.3",
+    "cipherSuite": "TLS_AES_256_GCM_SHA384",
     "certificate": {
-      "subject": "",
-      "issuer": "",
-      "notAfter": null,
-      "daysToExpiry": null
+      "subject": "CN = iam.challachandrababunaidu.com",
+      "issuer": "C = US, O = Let's Encrypt, CN = R13",
+      "notAfter": "2026-05-21T10:41:08Z",
+      "daysToExpiry": 79
     },
-    "errors": [
-      "timeout"
-    ],
+    "errors": [],
     "url": "https://iam.challachandrababunaidu.com",
     "env": "staging",
     "source_file": "config/application-staging.yml",
     "line": 13,
-    "context": "base-url: https://iam.challachandrababunaidu.com"
+    "context": "base-url: https://iam.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-staging.yml#L13"
   },
   {
     "endpoint": "www.challachandrababunaidu.com:443",
@@ -321,6 +320,7 @@
     "env": "staging",
     "source_file": "config/application-staging.yml",
     "line": 7,
-    "context": "base-url: https://www.challachandrababunaidu.com"
+    "context": "base-url: https://www.challachandrababunaidu.com",
+    "git_link": "https://github.com/Challa823/inspectra-github-workflow/blob/main/config/application-staging.yml#L7"
   }
 ]
