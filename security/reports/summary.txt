@@ -3,21 +3,21 @@ CurrentJDK : 17.0.18
 Future Minor JDK : Unknown
 Future Major JDK : 21.0.9
 
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
-www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=HIGH | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor version support is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+iam.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.
+www.challachandrababunaidu.com:443 | tls=TLSv1.3 | cipher=TLS_AES_256_GCM_SHA384 | severity=WARNING | now=Supported | futureMinor=Unknown | futureMajor=Supported | Future minor TLS status is unknown.

@@ -32,14 +32,14 @@
       "logprobs": null,
       "message": {
         "annotations": [],
-        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [\n      \"TLS_AES_256_GCM_SHA384\"\n    ],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"TLS_AES_256_GCM_SHA384\",\n      \"now\": \"Supported\",\n      \"futureMinor\": \"Unknown\",\n      \"futureMajor\": \"Supported\",\n      \"severity\": \"HIGH\",\n      \"reason\": \"Future minor version support is unknown.\",\n      \"action\": \"Monitor future JDK updates.\"\n    }\n  ],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
+        "content": "{\n  \"extraction\": {\n    \"tls version\": [\n      \"TLSv1.3\"\n    ],\n    \"Cipher version\": [\n      \"TLS_AES_256_GCM_SHA384\"\n    ],\n    \"CurrentJdkVersion\": \"17.0.18\",\n    \"futureJDKMinorUpgradeVersion\": \"Unknown\",\n    \"FutureMajorUpgradedVersion\": \"21.0.9\",\n    \"uniqusslerrors\": []\n  },\n  \"compatibility\": [\n    {\n      \"tls version\": \"TLSv1.3\",\n      \"Cipher version\": \"TLS_AES_256_GCM_SHA384\",\n      \"now\": \"Supported\",\n      \"futureMinor\": \"Unknown\",\n      \"futureMajor\": \"Supported\",\n      \"severity\": \"WARNING\",\n      \"reason\": \"Future minor TLS status is unknown.\",\n      \"action\": \"Monitor future JDK updates.\"\n    }\n  ],\n  \"highSummaryFromErrors\": \"\",\n  \"endpoints_scan_augmented\": []\n}",
         "refusal": null,
         "role": "assistant"
       }
     }
   ],
-  "created": 1772284435,
-  "id": "chatcmpl-DEEQlQb0otDzliJousH2C8JD6AF5j",
+  "created": 1772500365,
+  "id": "chatcmpl-DF8bVtPBKKWAfrxaBA8DTQKC4WDjr",
   "model": "gpt-4o-mini-2024-07-18",
   "object": "chat.completion",
   "prompt_filter_results": [
@@ -78,11 +78,11 @@
       "reasoning_tokens": 0,
       "rejected_prediction_tokens": 0
     },
-    "prompt_tokens": 689,
+    "prompt_tokens": 1092,
     "prompt_tokens_details": {
       "audio_tokens": 0,
       "cached_tokens": 0
     },
-    "total_tokens": 893
+    "total_tokens": 1296
   }
 }
