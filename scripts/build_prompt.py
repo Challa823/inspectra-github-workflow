@@ -2,14 +2,31 @@ import json
 import os
 import argparse
 
-SYSTEM_PROMPT = """\
-You are a senior TLS/SSL security engineer and build engineer. Follow all instructions exactly, \
-preserve field names exactly as specified, and only derive values from the provided JSON inputs. \
-Do not invent fields or rename keys. When data is missing, use "Unknown" values and explain briefly.\
+SYSTEM_PROMPT = """You are a senior TLS/SSL security engineer and build engineer. Follow all instructions exactly,
+preserve field names exactly as specified, and only derive values from the provided JSON inputs.
+Do not invent fields or rename keys. When data is missing, use "Unknown" values and explain briefly.
+
+STATUS NORMALIZATION RULES
+- Normalize values case-insensitively:
+  • "supported", "ok", "true" → Supported
+  • "not supported", "false", "fail", "no" → Not Supported
+  • "", null, "unknown" → Unknown
+
+NEW SEVERITY RULES (OVERRIDE ALL PREVIOUS)
+1. If currentJdktlsStatus (now) is NOT SUPPORTED → Severity = CRITICAL
+2. If currentJdktlsStatus is SUPPORTED AND futureMinorJdlTlsStatus is NOT SUPPORTED → Severity = HIGH
+3. If currentJdktlsStatus is SUPPORTED AND futureMinorJdlTlsStatus is UNKNOWN → Severity = WARNING
+4. If currentJdktlsStatus is SUPPORTED AND futureMinorJdlTlsStatus is SUPPORTED → Severity = INFO
+5. If BOTH currentJdktlsStatus and futureMinorJdlTlsStatus are NOT SUPPORTED → Severity = CRITICAL
+
+Notes:
+- futureMajor is still computed and returned but DOES NOT affect severity under the new rules unless current is not supported.
+- Always prioritize rule (1) and (5) over everything else.
+- Severity must be one of: CRITICAL, HIGH, WARNING, INFO.
+- Reason and Action must be concise (≤ 140 chars).
 """
 
-USER_TEMPLATE = """\
-# INPUT: Pre-extracted TLS context
+USER_TEMPLATE = """# INPUT: Pre-extracted TLS context
 <<<TLS_CONTEXT_JSON>>>
 
 # COMPATIBILITY EVALUATION
@@ -18,9 +35,11 @@ For EACH observed composite pair (cartesian product) of:
 - one entry from "Cipher version"
 
 determine whether the pair is supported:
-- NOW     (CurrentJdkVersion)
-- FUTURE MINOR (futureJDKMinorUpgradeVersion)
-- FUTURE MAJOR (FutureMajorUpgradedVersion)
+- NOW               (CurrentJdkVersion → currentJdktlsStatus)
+- FUTURE MINOR      (futureJDKMinorUpgradeVersion → futureMinorJdlTlsStatus)
+- FUTURE MAJOR      (FutureMajorUpgradedVersion → futureMajorJdkTlsStatus, informational only)
+
+Use all available information from TLS context, JDK info, release metadata, and endpoint scan metadata.
 
 Assumptions (apply conservatively):
 - TLS 1.3: JDK 11+. TLS 1.2: JDK 7+. TLS < 1.2: Not Supported.
@@ -29,34 +48,49 @@ Assumptions (apply conservatively):
 - If CurrentJdkVersion major < 11, no TLS 1.3 unless stated.
 - If release data is insufficient, verdict = "Unknown".
 
-Severity mapping:
-- NOT supported in futureMinor => "CRITICAL"
-- Supported in futureMinor but NOT in futureMajor => "HIGH"
-- Supported in both => "INFO"
+STATUS NORMALIZATION:
+- Supported / Not Supported / Unknown (case-insensitive)
+- Missing → Unknown
 
-# OUTPUT - PAGE 1 (exact structure, valid JSON only, no markdown)
-1) "extraction" object — copy the input context exactly as-is (same keys, same values).
-2) "compatibility" array — one item per composite pair:
+SEVERITY RULES (MANDATORY):
+1. If currentJdktlsStatus is Not Supported → CRITICAL
+2. If currentJdktlsStatus is Supported AND futureMinorJdlTlsStatus is Not Supported → HIGH
+3. If currentJdktlsStatus is Supported AND futureMinorJdlTlsStatus is Unknown → WARNING
+4. If currentJdktlsStatus is Supported AND futureMinorJdlTlsStatus is Supported → INFO
+5. If BOTH current and futureMinor are Not Supported → CRITICAL
+
+# OUTPUT — PAGE 1 (valid JSON only)
+1) "extraction" — copy the input TLS context exactly as-is.
+
+2) "compatibility" array — one object per composite pair:
    {
-     "tls version":    "<TLS value>",
-     "Cipher version": "<Cipher value>",
-     "now":            "Supported|Not Supported|Unknown",
-     "futureMinor":    "Supported|Not Supported|Unknown",
-     "futureMajor":    "Supported|Not Supported|Unknown",
-     "severity":       "CRITICAL|HIGH|INFO",
-     "reason":         "<short reason, max 140 chars>",
-     "action":         "<short remediation, max 140 chars>"
+     "tls version":          "<TLS value>",
+     "Cipher version":       "<Cipher value>",
+     "now":                  "Supported|Not Supported|Unknown",
+     "futureMinor":          "Supported|Not Supported|Unknown",
+     "futureMajor":          "Supported|Not Supported|Unknown",
+     "severity":             "CRITICAL|HIGH|WARNING|INFO",
+     "reason":               "<short reason, <= 140 chars>",
+     "action":               "<short action, <= 140 chars>"
    }
-3) "highSummaryFromErrors" string — one paragraph synthesising risks from "uniqusslerrors". If empty, use "".
 
-# OUTPUT - PAGE 2 (augment endpoints from endpoints_scan_augmented)
-"endpoints_scan_augmented" array — ALL endpoint objects unmodified PLUS two new keys each:
-- "Review comments": explanation if severity is CRITICAL/HIGH for that endpoint's (tls version, Cipher version); else "".
-- "Action": concise fix; else "".
-Preserve all original keys exactly.
+3) "highSummaryFromErrors" — one paragraph synthesising risks from "uniqusslerrors". If none, return "".
 
-Output order: extraction, compatibility, highSummaryFromErrors, endpoints_scan_augmented.
-No markdown, no extra commentary. Valid JSON only.
+# OUTPUT — PAGE 2
+"endpoints_scan_augmented" — ALL original endpoint objects returned unchanged PLUS:
+- "Review comments": explanation if severity is CRITICAL/HIGH/ WARNING for that endpoint’s composite.
+- "Action": concise remediation.
+If severity is INFO, set both to "".
+
+Preserve all original keys and values exactly.
+
+Output order MUST be:
+1. extraction
+2. compatibility
+3. highSummaryFromErrors
+4. endpoints_scan_augmented
+
+NO markdown. NO commentary. ONLY valid JSON.
 """
 
 

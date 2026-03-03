@@ -69,7 +69,7 @@ def extract_tls_protocol(raw):
       1. Handshake summary line:  'New, TLSv1.3, Cipher is ...'
       2. Summary block:           'Protocol: TLSv1.3'  (no space before colon)
       3. SSL-Session block:       'Protocol  : TLSv1.3' (double-space)
-      4. Any TLSv\d.\d occurrence as last resort
+      4. Any TLSv\\d.\\d occurrence as last resort
     """
     import re
 
