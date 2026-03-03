@@ -120,8 +120,8 @@ def extract_analysis(
         # Endpoints with no TLS (e.g. timeout / <none>) keep "Unknown" statuses
         if tls_proto in ("<none>", "", None):
             now_val = future_minor_val = future_major_val = "Unknown"
-            if not severity or severity == "Unknown":
-                severity = "UNKNOWN"
+            if not severity or severity in ("Unknown", "UNKNOWN"):
+                severity = "WARNING"
 
         analysis_list.append({
             # ── Endpoint identity ─────────────────────────────────────────

@@ -60,7 +60,14 @@ def generate_sarif_report(analysis_data, endpoints_meta):
         status = get_support_status(item)
         reason = item.get("compatibility", {}).get("reason", "")
 
-        severity = {"Supported": "note", "Unknown": "warning", "Not Supported": "error"}.get(status, "note")
+        # Use severity field from analysis.json directly (CRITICAL/HIGH/WARNING/INFO)
+        sev_field = (item.get("severity") or "").upper()
+        severity = {
+            "CRITICAL": "error",
+            "HIGH":     "error",
+            "WARNING":  "warning",
+            "INFO":     "note",
+        }.get(sev_field) or {"Supported": "note", "Unknown": "warning", "Not Supported": "error"}.get(status, "note")
 
         # Look up source file info from collect_endpoints.py result
         meta_entries = endpoints_meta.get(endpoint, [])
@@ -124,7 +131,14 @@ def generate_sonar_report(analysis_data, endpoints_meta):
         status = get_support_status(item)
         reason = item.get("compatibility", {}).get("reason", "")
 
-        severity = {"Supported": "INFO", "Unknown": "MINOR", "Not Supported": "MAJOR"}.get(status, "INFO")
+        # Use severity field from analysis.json directly (CRITICAL/HIGH/WARNING/INFO)
+        sev_field = (item.get("severity") or "").upper()
+        severity = {
+            "CRITICAL": "CRITICAL",
+            "HIGH":     "MAJOR",
+            "WARNING":  "MINOR",
+            "INFO":     "INFO",
+        }.get(sev_field) or {"Supported": "INFO", "Unknown": "MINOR", "Not Supported": "MAJOR"}.get(status, "INFO")
 
         meta_entries = endpoints_meta.get(endpoint, [])
         meta = meta_entries[0] if meta_entries else {}

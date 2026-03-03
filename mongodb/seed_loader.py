@@ -61,7 +61,7 @@ except ImportError:
 SCHEMA_VERSION = 1
 DEFAULT_DB = "inspectra"
 DEFAULT_REPORTS_DIR = "security/reports"
-SEVERITY_RANK = {"CRITICAL": 5, "HIGH": 4, "MEDIUM": 3, "LOW": 2, "INFO": 1, "UNKNOWN": 0}
+SEVERITY_RANK = {"CRITICAL": 4, "HIGH": 3, "WARNING": 2, "INFO": 1, "UNKNOWN": 0}
 CERT_ALERT_THRESHOLD_DAYS = 30
 
 logging.basicConfig(
@@ -222,7 +222,7 @@ def build_tls_findings(analysis: list, args: argparse.Namespace, now: datetime) 
             "current_jdk_tls_status": entry.get("CurrentJdkTlsStatus", "Unknown"),
             "future_jdk_minor_tls_status": entry.get("FutureJdkMinorTlsStatus", "Unknown"),
             "future_jdk_major_tls_status": entry.get("FutureJdkMajorTlsStatus", "Unknown"),
-            "severity": (entry.get("severity") or "UNKNOWN").upper(),
+            "severity": (entry.get("severity") or "WARNING").upper(),
             "reason": entry.get("reason"),
             "action": entry.get("action"),
             "source_file": source_file,

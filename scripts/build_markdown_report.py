@@ -69,7 +69,9 @@ def severity_rank(sev):
     s = (sev or "").upper()
     if s == "CRITICAL": return 0
     if s == "HIGH":     return 1
-    return 2
+    if s == "WARNING":  return 2
+    if s == "INFO":     return 3
+    return 4
 
 def coalesce(*vals, default=""):
     for v in vals:
@@ -77,7 +79,7 @@ def coalesce(*vals, default=""):
             return v
     return default
 
-def determine_severity(now, fut_minor_status, fut_major_status, fallback="INFO"):
+def determine_severity(now, fut_minor_status, fut_major_status, fallback="WARNING"):
     def norm(v):
         v = (v or "").strip().lower()
         if v in ("true","supported","ok"): return "Supported"
@@ -85,15 +87,20 @@ def determine_severity(now, fut_minor_status, fut_major_status, fallback="INFO")
         if v in ("unknown","",): return "Unknown"
         return v.title()
 
+    n  = norm(now)
     mn = norm(fut_minor_status)
-    mj = norm(fut_major_status)
-    if norm(now) == "Not Supported":
+    # Rule 1 & 5: current NOT SUPPORTED → CRITICAL
+    if n == "Not Supported":
         return "CRITICAL"
-    if mn == "Not Supported":
+    # Rule 2: current SUPPORTED, futureMinor NOT SUPPORTED → HIGH
+    if n == "Supported" and mn == "Not Supported":
         return "HIGH"
-    if mn == "Supported" and mj == "Not Supported":
+    # Rule 3: current SUPPORTED, futureMinor UNKNOWN → WARNING
+    if n == "Supported" and mn == "Unknown":
+        return "WARNING"
+    # Rule 4: current SUPPORTED, futureMinor SUPPORTED → INFO
+    if n == "Supported" and mn == "Supported":
         return "INFO"
-    
     return fallback
 
 def truncate(s, n=180):
