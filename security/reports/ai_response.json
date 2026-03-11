@@ -38,8 +38,8 @@
       }
     }
   ],
-  "created": 1773254090,
-  "id": "chatcmpl-DIIgM2VZfDc1ej3KQvaRauJt6NZVP",
+  "created": 1773254433,
+  "id": "chatcmpl-DIIlt1pbmTKkvIKyWLnOCBYwSXXIK",
   "model": "gpt-4o-mini-2024-07-18",
   "object": "chat.completion",
   "prompt_filter_results": [
@@ -81,7 +81,7 @@
     "prompt_tokens": 1092,
     "prompt_tokens_details": {
       "audio_tokens": 0,
-      "cached_tokens": 0
+      "cached_tokens": 1024
     },
     "total_tokens": 1296
   }
