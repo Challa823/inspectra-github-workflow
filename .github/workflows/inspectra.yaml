@@ -151,6 +151,26 @@ jobs:
             --jdk-info security/reports/jdk_info.json \
             --output-md security/reports/tls-audit.md
 
+      - name: Load results into MongoDB
+        if: always()
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
+        run: |
+          pip install pymongo --quiet
+          python mongodb/seed_loader.py \
+            --mongo-uri "$MONGO_URI" \
+            --db inspectra \
+            --org "${{ github.repository_owner }}" \
+            --repo "${{ github.event.repository.name }}" \
+            --branch "${{ github.ref_name }}" \
+            --run-id "${{ github.run_id }}" \
+            --git-sha "${{ github.sha }}" \
+            --workflow-file "inspectra.yaml" \
+            --triggered-by "${{ github.actor }}" \
+            --conclusion "${{ job.status }}" \
+            --ai-model "gpt-4o" \
+            --reports-dir "security/reports"
+            
       - name: Generate SARIF + Sonar reports
         run: |
           python scripts/generate_reports.py \
