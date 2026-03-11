@@ -29,14 +29,24 @@ permissions:
   contents: write
   security-events: write
 
+# Force GitHub Actions to run JS actions on Node 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   audit:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.branch || github.ref_name }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
 
       - name: Create reports directory
         run: mkdir -p security/reports
@@ -56,6 +66,7 @@ jobs:
             --files-glob "${FILES_GLOB}" \
             --base-dir . \
             --output security/reports/endpoints.txt
+
           cp security/reports/endpoints.txt endpoints.txt
           cp security/reports/endpoints.json endpoints.json || true
 
@@ -65,6 +76,7 @@ jobs:
           python scripts/endpoint_tls_scans.py \
             --endpoints-json endpoints.json \
             --output security/reports/endpoints_scan.json
+
           cp security/reports/endpoints_scan.json endpoints_scan.json
 
       - name: Fetch Java Releases
@@ -73,16 +85,18 @@ jobs:
         run: |
           python scripts/fetch_java_releases.py \
             --output security/reports/java_releases.json
+
           cp security/reports/java_releases.json java_releases.json || true
 
       - name: Extract TLS context
         id: extract_tls_context
         run: |
           python scripts/extract_tls_context.py \
-            --jdk-info      jdk_info.json \
+            --jdk-info jdk_info.json \
             --java-releases java_releases.json \
             --endpoints-scan endpoints_scan.json \
-            --output        security/reports/tls_context.json
+            --output security/reports/tls_context.json
+
           cp security/reports/tls_context.json tls_context.json
 
       - name: Build prompt
@@ -90,32 +104,32 @@ jobs:
         run: |
           python scripts/build_prompt.py \
             --tls-context tls_context.json \
-            --system-out  security/reports/prompt_system.txt \
-            --user-out    security/reports/prompt_user.txt
+            --system-out security/reports/prompt_system.txt \
+            --user-out security/reports/prompt_user.txt
+
           cp security/reports/prompt_system.txt prompt_system.txt
-          cp security/reports/prompt_user.txt   prompt_user.txt
+          cp security/reports/prompt_user.txt prompt_user.txt
 
       - name: Call GitHub Models Chat API
         id: call_github_models
         env:
-          # GH_TOKEN must be a GitHub PAT stored as a repository secret named
-          # GH_TOKEN. The automatic GITHUB_TOKEN returns 403 for Models API.
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           python scripts/call_github_models.py \
             --system-file prompt_system.txt \
             --prompt-file prompt_user.txt \
-            --output      security/reports/ai_response.json
+            --output security/reports/ai_response.json
+
           cp security/reports/ai_response.json ai_response.json
 
       - name: Extract model content
         id: extract_analysis
         run: |
           python scripts/extract_analysis.py \
-            --model-response  ai_response.json \
-            --endpoints-scan  endpoints_scan.json \
-            --output          security/reports/analysis.json \
-            --summary-out     security/reports/summary.txt
+            --model-response ai_response.json \
+            --endpoints-scan endpoints_scan.json \
+            --output security/reports/analysis.json \
+            --summary-out security/reports/summary.txt
 
       - name: Build Markdown audit table
         run: |
@@ -127,7 +141,6 @@ jobs:
             --jdk-info security/reports/jdk_info.json \
             --output-md security/reports/tls-audit.md
 
-
       - name: Load results into MongoDB
         if: always()
         env:
@@ -135,28 +148,28 @@ jobs:
         run: |
           pip install pymongo --quiet
           python mongodb/seed_loader.py \
-            --mongo-uri   "$MONGO_URI" \
-            --db          inspectra \
-            --org         "${{ github.repository_owner }}" \
-            --repo        "${{ github.event.repository.name }}" \
-            --branch      "${{ github.ref_name }}" \
-            --run-id      "${{ github.run_id }}" \
-            --git-sha     "${{ github.sha }}" \
+            --mongo-uri "$MONGO_URI" \
+            --db inspectra \
+            --org "${{ github.repository_owner }}" \
+            --repo "${{ github.event.repository.name }}" \
+            --branch "${{ github.ref_name }}" \
+            --run-id "${{ github.run_id }}" \
+            --git-sha "${{ github.sha }}" \
             --workflow-file "inspectra.yaml" \
-            --triggered-by  "${{ github.actor }}" \
-            --conclusion    "${{ job.status }}" \
-            --ai-model      "gpt-4o" \
-            --reports-dir   "security/reports"
+            --triggered-by "${{ github.actor }}" \
+            --conclusion "${{ job.status }}" \
+            --ai-model "gpt-4o" \
+            --reports-dir "security/reports"
 
       - name: Generate SARIF and Sonar files
         run: |
           python scripts/generate_reports.py \
-            --analysis       security/reports/analysis.json \
+            --analysis security/reports/analysis.json \
             --endpoints-json endpoints.json \
-            --out-dir        security/reports
+            --out-dir security/reports
 
       - name: Upload SARIF to GitHub code scanning
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: security/reports/tls-audit.sarif
 
@@ -167,6 +180,9 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
           git add security/reports/
+
           git commit -m "TLS audit reports [skip ci]" || echo "No changes to commit"
+
           git push
