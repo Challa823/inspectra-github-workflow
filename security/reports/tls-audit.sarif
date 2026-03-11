@@ -30,7 +30,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -217,7 +217,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -404,7 +404,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -591,7 +591,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -778,7 +778,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -965,7 +965,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1152,7 +1152,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1339,7 +1339,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -1526,7 +1526,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -1713,7 +1713,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -1900,7 +1900,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -2087,7 +2087,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2274,7 +2274,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2461,7 +2461,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -2648,7 +2648,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -2835,7 +2835,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
@@ -3022,7 +3022,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Unknown \u2014  (source: config/application-dsit.properties:13)"
+            "text": "[DSIT] iam.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:13)"
           },
           "locations": [
             {
@@ -3209,7 +3209,7 @@
           "ruleId": "TLS001",
           "level": "warning",
           "message": {
-            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor version status is unknown. (source: config/application-dsit.properties:7)"
+            "text": "[DSIT] www.challachandrababunaidu.com:443 \u2014 Supported \u2014 Future minor TLS status is unknown. (source: config/application-dsit.properties:7)"
           },
           "locations": [
             {
